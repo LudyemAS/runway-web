@@ -41,14 +41,15 @@ Cloudflare account for the worker/analytics: Apple-SSO login, account id `d151ea
 4. Back in Settings → Pages, wait for the cert, then tick **Enforce HTTPS**.
 
 ## Step 2 — Email routing for support@runwayfire.com
-The app and site now send support mail to `support@runwayfire.com`; make it deliver to the same
-inbox `support@ludyem.dev` currently forwards to.
-- **Recommended (Cloudflare Email Routing, free):** move `runwayfire.com`'s nameservers to
-  Cloudflare (add it to the same CF account, follow the nameserver change at your registrar). Then
-  **Email → Email Routing → Routing rules**: forward `support@runwayfire.com` → your real inbox.
-  This also gives you one place for the Pages DNS (Step 1) and the analytics hostname (Step 5).
-- **Quick alternative:** use your registrar's built-in email forwarding (adds MX + a forward rule)
-  if you'd rather not move nameservers.
+The app and site now send support mail to `support@runwayfire.com`; forward it to the same inbox
+`support@ludyem.dev` uses (`app.ludyem@gmail.com`).
+- **Porkbun (where the DNS already lives):** Porkbun dashboard → the domain → **Email Forwarding** →
+  forward `support@runwayfire.com` → `app.ludyem@gmail.com`. Porkbun adds the MX records for you; no
+  nameserver change.
+- Then add `support@runwayfire.com` as a Gmail **Send mail as** alias so replies go out from the
+  Runway address (the verification link arrives via the forward). Same setup as support@ludyem.dev.
+- (Cloudflare Email Routing is only simpler if you move the domain's nameservers to Cloudflare — not
+  worth it just for email when DNS is on Porkbun.)
 
 ## Step 3 — Deploy the waitlist worker (picks up the new origin)
 ```bash
