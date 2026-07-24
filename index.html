@@ -75,6 +75,14 @@
     .phone img { display: block; border-radius: 23px; aspect-ratio: 9 / 19.5; height: clamp(300px, 46vh, 400px); width: auto; object-fit: cover; }
     .shot-cap { margin-top: 13px; text-align: center; font-size: 13px; color: var(--muted); line-height: 1.5; }
     .shot-cap strong { display: block; color: var(--text); font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    /* Mobile: size each phone to the viewport and centre the active shot with symmetric
+       peeks, so the row reads as a swipe carousel instead of the first phone hugging the
+       left edge with the next one clipped off-screen. */
+    @media (max-width: 640px) {
+      .shots { --card-w: min(52vw, 200px); gap: 18px; justify-content: start; padding-left: calc((100vw - var(--card-w)) / 2); padding-right: calc((100vw - var(--card-w)) / 2); }
+      .shot { width: var(--card-w); max-width: none; }
+      .phone img { width: 100%; height: auto; }
+    }
 
     /* Waitlist form */
     .waitlist-card {
@@ -142,8 +150,8 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <div class="hero-badge js-prelaunch"><span class="hero-badge-dot"></span> Built for Norway · Launching August 25, 2026 · On-device, no bank logins</div>
-      <div class="hero-badge js-live"><span class="hero-badge-dot"></span> Built for Norway · On the App Store · On-device, no bank logins</div>
+      <div class="hero-badge js-prelaunch">Built for Norway · Launching August 25, 2026 · On-device, no bank logins</div>
+      <div class="hero-badge js-live">Built for Norway · On the App Store · On-device, no bank logins</div>
       <h1>Know the day<br><span class="grad">you're free.</span></h1>
       <p class="hero-sub">
         Runway turns your money into one honest number: the age you could stop working.
