@@ -52,9 +52,17 @@
    empty gap below it. Force proportional scaling. ── */
 .duo img { height: auto; }
 
-/* ── 2. Mobile nav hamburger ──
-   The shared stylesheet hides .nav-links under ~860px with no fallback; add a
-   toggle that drops them down as a panel. ── */
+/* ── 2. Nav sizing + mobile hamburger ──
+   The global nav carries seven items (six sections plus the language switch),
+   which at the shared 32px gap overruns the 1100px nav-inner between the 860px
+   hamburger breakpoint and full desktop width. Tighten the gap and type through
+   that band so the row always fits on one line instead of wrapping. ── */
+@media (max-width: 1080px) {
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 14px; }
+}
+/* The shared stylesheet hides .nav-links under ~860px with no fallback; add a
+   toggle that drops them down as a panel. */
 .nav-toggle {
   display: none; background: var(--card); border: 1px solid var(--border); color: var(--text);
   width: 42px; height: 40px; border-radius: 10px; cursor: pointer; padding: 0;

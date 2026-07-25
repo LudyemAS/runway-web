@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="MMzzVhPsYPz19_6U-ingNIUit5n-v7O2YB7pzZW5-8s" />
   <title>Runway, the FIRE planner built for Norway</title>
-  <meta name="description" content="Runway turns your money into one honest number: the age you could stop working. Norwegian tax rules built in (wealth tax, ASK, exit tax), retiring abroad priced for 14 countries, an on-device AI assistant, and the levers to retire sooner. No account, no bank logins." />
+  <meta name="description" content="Runway turns your money into one honest number: the age you could stop working. Norwegian tax rules built in, retiring abroad priced in. No account needed." />
   <meta property="og:title" content="Runway, the FIRE planner built for Norway" />
   <meta property="og:description" content="One honest number: the age you could stop working. Pull the levers that move it sooner, even retiring abroad. On-device, no account, no bank logins." />
   <meta property="og:url" content="https://runwayfire.com/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Runway" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:locale:alternate" content="nb_NO" />
   <meta property="og:image" content="https://runwayfire.com/assets/icons/runway.png" />
+  <meta name="twitter:card" content="summary" />
   <link rel="canonical" href="https://runwayfire.com/" />
   <link rel="alternate" hreflang="en" href="https://runwayfire.com/" />
   <link rel="alternate" hreflang="nb-NO" href="https://runwayfire.com/no/" />
@@ -119,6 +123,44 @@
   <link rel="stylesheet" href="/assets/runway-site.css" />
   <script>(function(){try{var q=(location.search.match(/[?&]theme=(dark|light)/)||[])[1];var s=q||localStorage.getItem('runway-theme');var t=s||((window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark');document.documentElement.setAttribute('data-theme',t);if(q){localStorage.setItem('runway-theme',q);}}catch(e){}})();</script>
   <script src="/assets/runway-ui.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://runwayfire.com/#organization",
+      "name": "Ludyem AS",
+      "url": "https://runwayfire.com/",
+      "email": "support@runwayfire.com",
+      "logo": { "@type": "ImageObject", "url": "https://runwayfire.com/assets/icons/ludyem.png" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://runwayfire.com/#website",
+      "url": "https://runwayfire.com/",
+      "name": "Runway",
+      "description": "Runway turns your money into one honest number: the age you could stop working.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://runwayfire.com/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://runwayfire.com/#app",
+      "name": "Runway",
+      "applicationCategory": "FinanceApplication",
+      "applicationSubCategory": "Retirement planning",
+      "operatingSystem": "iOS 26.0 or later",
+      "url": "https://runwayfire.com/",
+      "downloadUrl": "https://apps.apple.com/app/id6784426559",
+      "inLanguage": ["en", "nb-NO"],
+      "description": "Runway is a retirement and financial-independence planner for iPhone and iPad, built around Norwegian tax rules: wealth tax, the ASK account, NAV and IPS pensions, and the exit tax. It projects your freedom age, ranks the levers that move it sooner, prices retiring abroad across 14 countries, and computes everything on-device with no account and no bank logins.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+      "publisher": { "@id": "https://runwayfire.com/#organization" }
+    }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -128,22 +170,22 @@
 
   <nav>
     <div class="nav-inner">
-      <a href="./" class="logo">
+      <a href="/" class="logo">
         <img class="logo-mark" src="/assets/icons/runway.png" alt="" width="32" height="32" />
         Runway
       </a>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-        <div class="nav-links" id="nav-links">
-        <a href="#how">How it works</a>
-        <a href="#features">Features</a>
-        <a href="#borders">Norway</a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#how">How it works</a>
+        <a href="/#features">Features</a>
+        <a href="/#borders">Norway</a>
         <a href="/calculators/">Calculators</a>
         <a href="/blog/">Blog</a>
+        <a href="/support">Support</a>
         <a href="/no/" lang="nb">Norsk</a>
-        <a href="support">Support</a>
       </div>
       <a href="https://testflight.apple.com/join/mW9JahfG" class="btn-nav js-prelaunch" style="white-space:nowrap;" target="_blank" rel="noopener">Try the beta</a>
-      <a href="https://apps.apple.com/app/id6784426559" class="btn-nav js-live" style="white-space:nowrap;" target="_blank" rel="noopener">Download Free</a>
+      <a href="https://apps.apple.com/app/id6784426559" class="btn-nav js-live" style="white-space:nowrap;" target="_blank" rel="noopener">Download free</a>
     </div>
   </nav>
 
@@ -155,9 +197,8 @@
       <h1>Know the day<br><span class="grad">you're free.</span></h1>
       <p class="hero-sub">
         Runway turns your money into one honest number: the age you could stop working.
-        Made for Norway, it speaks Norwegian and knows the rules that actually move your date here.
-        Answer a few questions, see your freedom age, then pull the levers that move it sooner.
-        Dreaming of retiring abroad? It plans that too.
+        Built on the Norwegian rules that actually move that date, with the levers to pull
+        it sooner, and a plan for retiring abroad.
       </p>
       <div class="hero-actions">
         <a href="https://testflight.apple.com/join/mW9JahfG" class="btn-primary js-prelaunch" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg> Try the beta on TestFlight</a>
@@ -247,33 +288,8 @@
     </div>
   </section>
 
-  <!-- Features -->
-  <section id="features">
-    <div class="container">
-      <div class="text-center">
-        <div class="section-label">Features</div>
-        <h2 class="section-title">As simple as your life, as deep as a spreadsheet</h2>
-        <p class="section-sub">Most planners are either shallow toys or overwhelming web apps built for US tax law. Runway is right-sized depth that fits in your pocket.</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotFreedom.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Your freedom age</h3><p>The one number that matters: the age your money could carry you. It's the hook, and it's free forever, no account required.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotTargetHit.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Freedom number</h3><p>The pot you actually need, derived from your real spending and a safe 4% withdrawal, net of pensions, rental, and side income.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotIdea.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>The levers</h3><p>An opportunity engine that finds the doors you didn't open: "invest 300 more a month, retire two years sooner." Every lever shows its effect.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotSafeSpend.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Plan health</h3><p>A seeded Monte Carlo runs your plan through 400 simulated market futures and scores how often your money lasts the distance.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotGrowth.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Money over time</h3><p>Watch your pot grow, peak, and draw down year by year, with your freedom goal line anchored to today so progress reads honestly.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotMoneyMap.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Adaptive onboarding</h3><p>No side income? Runway never mentions it. No property? It skips the mortgage questions. It asks only what fits your life, nothing more.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotAssumptions.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Scenario lab</h3><p>Try the what-ifs side by side: a market crash, a later start, a different spend, a change in how you invest. Compare paths before you commit.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotWealthTax.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Built for Norway</h3><p>The only FIRE planner that knows formuesskatt, the ASK account, NAV and IPS pensions, and the exit tax you would owe if you ever leave. Your number, by Norwegian rules.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotRelocate.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Retire abroad</h3><p>Dreaming of Spain or Thailand? Pick a destination and Runway prices the move: local taxes on your drawdown, the exit tax on the way out, spending in local currency. 14 countries modelled.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotPip.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Ask Pip</h3><p>Runway's plan assistant. Ask why your number moved or what would help most, get answers grounded in your plan, and let Pip apply the change. On-device with Apple Intelligence.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotSpending.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Life events, real spending</h3><p>Add an inheritance, a windfall, or a big one-off cost. Let retirement spending ease with age, and set guardrails that flex it when markets misbehave.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotWidget.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Widgets and Siri</h3><p>Keep your freedom date on your home and lock screen, ask Siri, or find your milestones in Spotlight. A glance is all it takes to see how close you are.</p></div>
-      </div>
-    </div>
-  </section>
-
   <!-- Built for Norway -->
-  <section id="borders" class="alt">
+  <section id="borders">
     <div class="container">
       <div class="duo">
         <div>
@@ -293,6 +309,31 @@
           </p>
         </div>
         <img src="assets/mascot-globe.svg" width="768" height="768" loading="lazy" decoding="async" alt="Pip holding a globe" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="alt">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-label">Features</div>
+        <h2 class="section-title">As simple as your life, as deep as a spreadsheet</h2>
+        <p class="section-sub">Most planners are either shallow toys or overwhelming web apps built for US tax law. Runway is right-sized depth that fits in your pocket.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotFreedom.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Your freedom age</h3><p>The one number that matters: the age your money could carry you. It's the hook, and it's free forever, no account required.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotTargetHit.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Freedom number</h3><p>The pot you actually need, derived from your real spending and a safe 4% withdrawal, net of pensions, rental, and side income.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotIdea.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>The levers</h3><p>An opportunity engine that finds the doors you didn't open: "invest 300 more a month, retire two years sooner." Every lever shows its effect.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotSafeSpend.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Plan health</h3><p>A seeded Monte Carlo runs your plan through 400 simulated market futures and scores how often your money lasts the distance.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotGrowth.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Money over time</h3><p>Watch your pot grow, peak, and draw down year by year, with your freedom goal line anchored to today so progress reads honestly.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotMoneyMap.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Adaptive onboarding</h3><p>No side income? Runway never mentions it. No property? It skips the mortgage questions. It asks only what fits your life, nothing more.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotAssumptions.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Scenario lab</h3><p>Try the what-ifs side by side: a market crash, a later start, a different spend, a change in how you invest. Compare paths before you commit.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotWealthTax.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Built for Norway</h3><p>The only FIRE planner that knows formuesskatt, the ASK account, NAV and IPS pensions, and the exit tax you would owe if you ever leave. Your number, by Norwegian rules.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotRelocate.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Retire abroad</h3><p>Dreaming of Spain or Thailand? Pick a destination and Runway prices the move: local taxes on your drawdown, the exit tax on the way out, spending in local currency. 14 countries modelled.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotPip.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Ask Pip</h3><p>Runway's plan assistant. Ask why your number moved or what would help most, get answers grounded in your plan, and let Pip apply the change. On-device with Apple Intelligence.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotSpending.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Life events, real spending</h3><p>Add an inheritance, a windfall, or a big one-off cost. Let retirement spending ease with age, and set guardrails that flex it when markets misbehave.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotWidget.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Widgets and Siri</h3><p>Keep your freedom date on your home and lock screen, ask Siri, or find your milestones in Spotlight. A glance is all it takes to see how close you are.</p></div>
       </div>
     </div>
   </section>
@@ -454,11 +495,11 @@
         Ludyem
       </a>
       <div class="footer-links">
-        <a href="#features">Features</a>
+        <a href="/calculators/">Calculators</a>
         <a href="/blog/">Blog</a>
-        <a href="privacy">Privacy</a>
-        <a href="terms">Terms</a>
-        <a href="support">Support</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/support">Support</a>
       </div>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme"><svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></svg><span class="theme-toggle-label">Light</span></button>
       <p class="footer-copy">© 2026 Ludyem AS · Not financial advice</p>

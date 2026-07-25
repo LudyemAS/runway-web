@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Renters rente-kalkulator: Se pengene dine vokse (gratis, 2026)</title>
-  <meta name="description" content="Gratis renters rente-kalkulator. Se hvordan et startbeløp pluss månedlige innskudd vokser med renten du velger, når renten beregnes månedlig, og hvor mye av sluttsummen som er ren vekst. Fungerer i kr, $, € eller £. Uten konto." />
+  <title>Renters rente-kalkulator: se pengene dine vokse (gratis)</title>
+  <meta name="description" content="Gratis renters rente-kalkulator. Se hvordan et startbeløp pluss månedlige innskudd vokser, og hvor mye av sluttsummen som er ren vekst." />
   <link rel="canonical" href="https://runwayfire.com/no/calculators/compound-interest/" />
   <link rel="alternate" hreflang="en" href="https://runwayfire.com/calculators/compound-interest/" />
   <link rel="alternate" hreflang="nb-NO" href="https://runwayfire.com/no/calculators/compound-interest/" />
@@ -14,6 +14,9 @@
   <meta property="og:description" content="Se hvordan et startbeløp og månedlige innskudd vokser med renters rente over årene, og hvor mye av summen som er ren vekst. Gratis, uten konto, valgfri valuta." />
   <meta property="og:url" content="https://runwayfire.com/no/calculators/compound-interest/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Runway" />
+  <meta property="og:locale" content="nb_NO" />
+  <meta property="og:locale:alternate" content="en" />
   <meta property="og:image" content="https://runwayfire.com/assets/icons/runway.png" />
   <meta name="twitter:card" content="summary" />
 
@@ -81,6 +84,17 @@
   <link rel="stylesheet" href="/assets/runway-site.css" />
   <script>(function(){try{var q=(location.search.match(/[?&]theme=(dark|light)/)||[])[1];var s=q||localStorage.getItem('runway-theme');var t=s||((window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark');document.documentElement.setAttribute('data-theme',t);if(q){localStorage.setItem('runway-theme',q);}}catch(e){}})();</script>
   <script src="/assets/runway-ui.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Hjem", "item": "https://runwayfire.com/no/" },
+      { "@type": "ListItem", "position": 2, "name": "Kalkulatorer", "item": "https://runwayfire.com/no/calculators/" },
+      { "@type": "ListItem", "position": 3, "name": "Renters rente-kalkulator", "item": "https://runwayfire.com/no/calculators/compound-interest/" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -93,11 +107,14 @@
         <img class="logo-mark" src="/assets/icons/runway.png" alt="" width="32" height="32" />
         Runway
       </a>
-      <button class="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-        <div class="nav-links" id="nav-links">
+      <button class="nav-toggle" type="button" aria-label="Meny" aria-controls="nav-links" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <div class="nav-links" id="nav-links">
         <a href="/no/#slik-fungerer-det">Slik fungerer det</a>
         <a href="/no/#funksjoner">Funksjoner</a>
+        <a href="/no/#norge">Norge</a>
+        <a href="/no/calculators/">Kalkulatorer</a>
         <a href="/no/blog/">Artikler</a>
+        <a href="/no/support">Støtte</a>
         <a href="/calculators/compound-interest/" lang="en">English</a>
       </div>
       <a href="https://testflight.apple.com/join/mW9JahfG" class="btn-nav js-prelaunch" style="white-space:nowrap;" target="_blank" rel="noopener">Prøv betaen</a>
@@ -146,11 +163,11 @@
 
       <div class="calc-out" aria-live="polite">
         <div class="out-label" id="out-label">Etter 20 år har du</div>
-        <div class="out-big" id="out-big">kr 3,008,507</div>
-        <div class="out-sub" id="out-sub"><strong>kr 1,708,507</strong> av det er ren vekst.</div>
+        <div class="out-big" id="out-big">kr&#160;3&#160;008&#160;507</div>
+        <div class="out-sub" id="out-sub"><strong>kr&#160;1&#160;708&#160;507</strong> av det er ren vekst.</div>
         <div class="out-rows">
-          <div class="out-row"><span class="k">Sum du har lagt inn</span><span class="v" id="out-contrib">kr 1,300,000</span></div>
-          <div class="out-row"><span class="k">Opptjente renter</span><span class="v" id="out-interest">kr 1,708,507</span></div>
+          <div class="out-row"><span class="k">Sum du har lagt inn</span><span class="v" id="out-contrib">kr&#160;1&#160;300&#160;000</span></div>
+          <div class="out-row"><span class="k">Opptjente renter</span><span class="v" id="out-interest">kr&#160;1&#160;708&#160;507</span></div>
           <div class="out-row"><span class="k">Vekstmultippel</span><span class="v" id="out-mult">2.3&times;</span></div>
         </div>
         <details class="calc-method">
@@ -269,9 +286,9 @@
       <div class="footer-links">
         <a href="/no/calculators/">Kalkulatorer</a>
         <a href="/no/blog/">Artikler</a>
-        <a href="/privacy">Personvern</a>
-        <a href="/terms">Vilkår</a>
-        <a href="/support">Kundestøtte</a>
+        <a href="/no/privacy">Personvern</a>
+        <a href="/no/terms">Vilkår</a>
+        <a href="/no/support">Støtte</a>
       </div>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme"><svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></svg><span class="theme-toggle-label">Light</span></button>
       <p class="footer-copy">&copy; 2026 Ludyem AS &middot; Ikke økonomisk rådgivning</p>

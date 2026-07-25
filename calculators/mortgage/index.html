@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mortgage Calculator: Monthly Payment & Total Interest (Free)</title>
-  <meta name="description" content="Free mortgage calculator. See your real monthly payment, the total interest a repayment mortgage costs, and how much overpaying each month saves in interest and years. Works in kr, $, € or £. No sign-up." />
+  <meta name="description" content="Free mortgage calculator. See your monthly payment, the total interest a repayment mortgage costs, and what overpaying saves in interest and years." />
   <link rel="canonical" href="https://runwayfire.com/calculators/mortgage/" />
   <link rel="alternate" hreflang="en" href="https://runwayfire.com/calculators/mortgage/" />
   <link rel="alternate" hreflang="nb-NO" href="https://runwayfire.com/no/calculators/mortgage/" />
@@ -14,6 +14,9 @@
   <meta property="og:description" content="Work out your monthly mortgage payment, what the loan costs in total, and how much extra payments save. Free, no sign-up, any currency." />
   <meta property="og:url" content="https://runwayfire.com/calculators/mortgage/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Runway" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:locale:alternate" content="nb_NO" />
   <meta property="og:image" content="https://runwayfire.com/assets/icons/runway.png" />
   <meta name="twitter:card" content="summary" />
 
@@ -35,6 +38,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
+    "inLanguage": "en",
     "name": "Runway Mortgage Calculator",
     "url": "https://runwayfire.com/calculators/mortgage/",
     "applicationCategory": "FinanceApplication",
@@ -52,6 +56,7 @@
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "inLanguage": "en",
     "mainEntity": [
       {
         "@type": "Question",
@@ -79,6 +84,17 @@
   <link rel="stylesheet" href="/assets/runway-site.css" />
   <script>(function(){try{var q=(location.search.match(/[?&]theme=(dark|light)/)||[])[1];var s=q||localStorage.getItem('runway-theme');var t=s||((window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark');document.documentElement.setAttribute('data-theme',t);if(q){localStorage.setItem('runway-theme',q);}}catch(e){}})();</script>
   <script src="/assets/runway-ui.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://runwayfire.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://runwayfire.com/calculators/" },
+      { "@type": "ListItem", "position": 3, "name": "Mortgage Calculator", "item": "https://runwayfire.com/calculators/mortgage/" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -92,11 +108,14 @@
         Runway
       </a>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-        <div class="nav-links" id="nav-links">
-        <a href="/calculators/">Calculators</a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#how">How it works</a>
         <a href="/#features">Features</a>
+        <a href="/#borders">Norway</a>
+        <a href="/calculators/">Calculators</a>
         <a href="/blog/">Blog</a>
         <a href="/support">Support</a>
+        <a href="/no/calculators/mortgage/" lang="nb">Norsk</a>
       </div>
       <a href="https://testflight.apple.com/join/mW9JahfG" class="btn-nav js-prelaunch" style="white-space:nowrap;" target="_blank" rel="noopener">Try the beta</a>
       <a href="https://apps.apple.com/app/id6784426559" class="btn-nav js-live" style="white-space:nowrap;" target="_blank" rel="noopener">Download free</a>

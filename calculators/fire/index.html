@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FIRE Calculator: When Can You Retire Early? (Free, 2026)</title>
-  <meta name="description" content="Free FIRE calculator. Enter what you've saved, what you invest each month, and what you'll spend, and see the age you could be financially independent, plus the FIRE number you need. Works in kr, $, € or £. No sign-up." />
+  <meta name="description" content="Free FIRE calculator. Enter what you've saved, invest monthly and will spend, and see the age you could be financially independent. Any currency." />
   <link rel="canonical" href="https://runwayfire.com/calculators/fire/" />
   <link rel="alternate" hreflang="en" href="https://runwayfire.com/calculators/fire/" />
   <link rel="alternate" hreflang="nb-NO" href="https://runwayfire.com/no/calculators/fire/" />
@@ -14,6 +14,9 @@
   <meta property="og:description" content="See the age you could stop working and the FIRE number you need, from your real figures. Free, no sign-up, works in any currency." />
   <meta property="og:url" content="https://runwayfire.com/calculators/fire/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Runway" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:locale:alternate" content="nb_NO" />
   <meta property="og:image" content="https://runwayfire.com/assets/icons/runway.png" />
   <meta name="twitter:card" content="summary" />
 
@@ -35,6 +38,7 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
+    "inLanguage": "en",
     "name": "Runway FIRE Calculator",
     "url": "https://runwayfire.com/calculators/fire/",
     "applicationCategory": "FinanceApplication",
@@ -52,6 +56,7 @@
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "inLanguage": "en",
     "mainEntity": [
       {
         "@type": "Question",
@@ -79,6 +84,17 @@
   <link rel="stylesheet" href="/assets/runway-site.css" />
   <script>(function(){try{var q=(location.search.match(/[?&]theme=(dark|light)/)||[])[1];var s=q||localStorage.getItem('runway-theme');var t=s||((window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark');document.documentElement.setAttribute('data-theme',t);if(q){localStorage.setItem('runway-theme',q);}}catch(e){}})();</script>
   <script src="/assets/runway-ui.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://runwayfire.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://runwayfire.com/calculators/" },
+      { "@type": "ListItem", "position": 3, "name": "FIRE Calculator", "item": "https://runwayfire.com/calculators/fire/" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -92,11 +108,14 @@
         Runway
       </a>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-        <div class="nav-links" id="nav-links">
-        <a href="/calculators/">Calculators</a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#how">How it works</a>
         <a href="/#features">Features</a>
+        <a href="/#borders">Norway</a>
+        <a href="/calculators/">Calculators</a>
         <a href="/blog/">Blog</a>
         <a href="/support">Support</a>
+        <a href="/no/calculators/fire/" lang="nb">Norsk</a>
       </div>
       <a href="https://testflight.apple.com/join/mW9JahfG" class="btn-nav js-prelaunch" style="white-space:nowrap;" target="_blank" rel="noopener">Try the beta</a>
       <a href="https://apps.apple.com/app/id6784426559" class="btn-nav js-live" style="white-space:nowrap;" target="_blank" rel="noopener">Download free</a>
@@ -196,16 +215,16 @@
           <line x1="64" y1="44" x2="64" y2="250" stroke="var(--border)" stroke-width="1.5" />
           <line x1="64" y1="64" x2="600" y2="64" stroke="var(--accent2)" stroke-width="1.5" stroke-dasharray="5 5" />
           <text x="600" y="54" text-anchor="end" class="fig-label" style="fill:var(--accent2)">Your FIRE number</text>
-          <path d="M64,244 C 244,238 384,196 500,64 L500,250 L64,250 Z" fill="url(#fireFill)" />
-          <path d="M64,244 C 244,238 384,196 500,64" fill="none" stroke="var(--accent1)" stroke-width="3" stroke-linecap="round" />
-          <line x1="500" y1="64" x2="500" y2="250" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="4 5" />
+          <path d="M 64,244 C 275.4,238 439.8,196 576,64 L576,250 L64,250 Z" fill="url(#fireFill)" />
+          <path d="M 64,244 C 275.4,238 439.8,196 576,64" fill="none" stroke="var(--accent1)" stroke-width="3" stroke-linecap="round" />
+          <line x1="576" y1="64" x2="576" y2="250" stroke="var(--border)" stroke-width="1.5" stroke-dasharray="4 5" />
           <circle cx="64" cy="244" r="4.5" fill="var(--muted)" />
-          <circle cx="500" cy="64" r="6.5" fill="var(--accent1)" stroke="var(--card)" stroke-width="2.5" />
-          <text x="500" y="34" text-anchor="middle" class="fig-strong">You're free</text>
+          <circle cx="576" cy="64" r="6.5" fill="var(--accent1)" stroke="var(--card)" stroke-width="2.5" />
+          <text x="576" y="34" text-anchor="middle" class="fig-strong">You're free</text>
           <text x="64" y="272" text-anchor="middle" class="fig-axis">Age 32</text>
-          <text x="500" y="272" text-anchor="middle" class="fig-axis">Age 54</text>
+          <text x="576" y="272" text-anchor="middle" class="fig-axis">Age 54</text>
         </svg>
-        <figcaption>Your savings and monthly investing compound in real terms until the pot reaches your FIRE number. Everything is in today's money.</figcaption>
+        <figcaption>Your savings and monthly investing compound in real terms until the pot reaches your FIRE number. Everything is in today’s money.</figcaption>
       </figure>
 
       <h2><span class="h2-spot spot-tile"><img src="/assets/spot/SpotInflation.svg" alt="" /></span>Why "real" return matters</h2>
@@ -350,7 +369,7 @@
         var years = months / 12;
         var freedomAge = age + years;
         outAge.textContent = "age " + Math.round(freedomAge);
-        outWhen.innerHTML = "in <strong>" + Math.round(years) + (Math.round(years) === 1 ? " year" : " years") + "</strong>, around " + Math.round(2026 + years);
+        outWhen.innerHTML = "in <strong>" + Math.round(years) + (Math.round(years) === 1 ? " year" : " years") + "</strong>, around " + (new Date().getFullYear() + Math.round(years));
         outYears.textContent = Math.round(years);
       }
 
