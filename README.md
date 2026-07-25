@@ -8,12 +8,18 @@ has its own domain instead of being a subfolder of `ludyem.dev`. Tend and Workou
 `ludyem.dev`; `ludyem.dev/runway/*` now 301-redirects here.
 
 ## Layout
-- `index.html`, `privacy.html`, `terms.html`, `support.html`, `press.html` — core pages
+- `index.html`, `privacy.html`, `terms.html`, `support.html`, `press.html`, `about.html` — core pages
 - `calculators/` — free FIRE calculators (SEO + funnel)
 - `blog/` — FIRE blog posts
+- `countries/` — hub + one page per modelled country, figures probed from the engine
 - `no/` — Norwegian (Bokmål) mirror, hreflang-paired
 - `assets/` — shared base (`ludyem.css`) + Runway theme (`runway-site.css`), icons, spot art, screenshots
 - `CNAME` — `runwayfire.com`
+
+## Maintenance
+**[`MAINTENANCE.md`](MAINTENANCE.md) before you edit content.** It holds the two site-state toggles
+(pre-launch to live, Norway-only to multi-country home), the hand-maintained counts that drift
+silently, and the add-a-country checklist.
 
 ## Deploy
 Pushing to `main` auto-deploys the LIVE site (App Store privacy/terms/support URLs point here).
