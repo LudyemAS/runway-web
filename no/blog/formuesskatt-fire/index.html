@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="nb" class="is-prelaunch">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formuesskatt og FIRE-tallet ditt (2026-satser)</title>
+  <meta name="description" content="Norge skattlegger nettoformue hvert år: 1,0 % over 1,9 millioner kroner (2026), 1,1 % på toppen. Hva det gjør med et FIRE-tall, med et regneeksempel." />
+  <link rel="canonical" href="https://runwayfire.com/no/blog/formuesskatt-fire/" />
+  <link rel="alternate" hreflang="en" href="https://runwayfire.com/blog/wealth-tax-norway-fire/" />
+  <link rel="alternate" hreflang="nb-NO" href="https://runwayfire.com/no/blog/formuesskatt-fire/" />
+  <link rel="alternate" hreflang="x-default" href="https://runwayfire.com/blog/wealth-tax-norway-fire/" />
+
+  <meta property="og:title" content="Formuesskatt: hva den årlige skatten gjør med en FIRE-pott" />
+  <meta property="og:description" content="Norge skattlegger nettoformue hvert år: 1,0 % over 1,9 millioner kroner (2026), 1,1 % på toppen. Hva det gjør med et FIRE-tall, med et regneeksempel." />
+  <meta property="og:url" content="https://runwayfire.com/no/blog/formuesskatt-fire/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Runway" />
+  <meta property="og:locale" content="nb_NO" />
+  <meta property="og:locale:alternate" content="en" />
+  <meta property="og:image" content="https://runwayfire.com/assets/icons/runway.png" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="stylesheet" href="/assets/ludyem.css" />
+  <style>
+    :root {
+      --accent1: #14b8a6; --accent2: #0d9488;
+      --grad-a: #5fd6c4; --grad-b: #34d399;
+      --accent-soft: rgba(20,184,166,0.14); --accent-line: rgba(20,184,166,0.32);
+    }
+  </style>
+  <script src="/assets/launch.js"></script>
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/runway-icon.svg?v=3" />
+  <link rel="alternate icon" type="image/png" href="/assets/icons/runway.png?v=2" />
+  <link rel="apple-touch-icon" href="/assets/icons/runway-180.png?v=2" />
+  <link rel="stylesheet" href="/assets/runway-site.css" />
+  <script>(function(){try{var q=(location.search.match(/[?&]theme=(dark|light)/)||[])[1];var s=q||localStorage.getItem('runway-theme');var t=s||((window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark');document.documentElement.setAttribute('data-theme',t);if(q){localStorage.setItem('runway-theme',q);}}catch(e){}})();</script>
+  <script src="/assets/runway-ui.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "inLanguage": "nb-NO",
+    "headline": "Formuesskatt: hva den \u00e5rlige skatten gj\u00f8r med en FIRE-pott",
+    "description": "Norge skattlegger nettoformue hvert \u00e5r: 1,0 % over 1,9 millioner kroner (2026), 1,1 % p\u00e5 toppen. Hva det gj\u00f8r med et FIRE-tall, med et regneeksempel.",
+    "image": "https://runwayfire.com/assets/icons/runway.png",
+    "datePublished": "2026-07-25",
+    "dateModified": "2026-07-25",
+    "author": { "@type": "Person", "name": "Dylan", "description": "Skaperen av Runway, en italiener som flyttet til Norge." },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ludyem",
+      "logo": { "@type": "ImageObject", "url": "https://runwayfire.com/assets/icons/ludyem.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://runwayfire.com/no/blog/formuesskatt-fire/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "nb-NO",
+    "mainEntity": [
+      { "@type": "Question", "name": "Hva er satsene for formuesskatt i 2026?", "acceptedAnswer": { "@type": "Answer", "text": "Nettoformue over 1,9 millioner kroner (3,8 millioner for ektefeller som lignes sammen) skattlegges med 1,0 prosent i \u00e5ret, og delen over 21,5 millioner (43 millioner for par) med 1,1 prosent. B\u00f8rsnoterte aksjer og aksjefond telles til 80 prosent av verdien; prim\u00e6rbolig verdsettes langt under markedsverdi med en rabatt som krymper over 14 millioner." } },
+      { "@type": "Question", "name": "Hvor mye formuesskatt betaler en portef\u00f8lje p\u00e5 8 millioner kroner?", "acceptedAnswer": { "@type": "Answer", "text": "For en enslig med 8 millioner i aksjefond og ingenting annet i 2026: 80 prosent verdsettelse gir 6,4 millioner, minus bunnfradraget p\u00e5 1,9 millioner gjenst\u00e5r 4,5 millioner, og 1,0 prosent av det er 45 000 kroner i \u00e5ret." } },
+      { "@type": "Question", "name": "Slipper aksjesparekontoen (ASK) formuesskatt?", "acceptedAnswer": { "@type": "Answer", "text": "Nei. ASK-beholdninger telles med samme 80 prosent verdsettelse som andre b\u00f8rsnoterte aksjer. Det ene vanlige skjulet er IPS-kontoen, som er helt unntatt fra grunnlaget, men l\u00e5st til 62 \u00e5r." } },
+      { "@type": "Question", "name": "Betaler jeg formuesskatt selv om jeg aldri selger?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Formuesskatten beregnes av det du eier, ikke av det du selger. Det er nettopp derfor en FIRE-pott m\u00e5 dimensjoneres til \u00e5 b\u00e6re sin egen \u00e5rlige skatteregning i tillegg til forbruket ditt." } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Hjem", "item": "https://runwayfire.com/no/" },
+      { "@type": "ListItem", "position": 2, "name": "Blogg", "item": "https://runwayfire.com/no/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Formuesskatt: hva den \u00e5rlige skatten gj\u00f8r med en FIRE-pott", "item": "https://runwayfire.com/no/blog/formuesskatt-fire/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/no/" class="logo">
+        <img class="logo-mark" src="/assets/icons/runway.png" alt="" width="32" height="32" />
+        Runway
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Meny" aria-controls="nav-links" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <div class="nav-links" id="nav-links">
+        <a href="/no/#slik-fungerer-det">Slik fungerer det</a>
+        <a href="/no/#funksjoner">Funksjoner</a>
+        <a href="/no/#norge">Norge</a>
+        <a href="/no/calculators/">Kalkulatorer</a>
+        <a href="/no/blog/">Blogg</a>
+        <a href="/no/support">Hjelp</a>
+        <a href="/blog/wealth-tax-norway-fire/" lang="en">English</a>
+      </div>
+      <a href="https://testflight.apple.com/join/mW9JahfG" class="btn-nav js-prelaunch" style="white-space:nowrap;" target="_blank" rel="noopener">Prøv betaen</a>
+      <a href="https://apps.apple.com/app/id6784426559" class="btn-nav js-live" style="white-space:nowrap;" target="_blank" rel="noopener">Last ned gratis</a>
+    </div>
+  </nav>
+
+  <main class="doc-main post-main">
+    <a href="/no/blog/" class="back-link">&larr; Alle innlegg</a>
+
+    <article>
+      <div class="hero-spot spot-tile" style="margin:28px 0 18px;"><img src="/assets/spot/SpotWealthTax.svg" alt="" width="88" height="88" /></div>
+      <p class="page-label">Norge</p>
+      <h1>Formuesskatt: hva den årlige skatten gjør med en FIRE-pott</h1>
+      <div class="post-meta">
+        <strong>Dylan</strong>
+        <span class="dot"></span><span>25. juli 2026</span>
+        <span class="dot"></span><span>7 min lesing</span>
+      </div>
+
+      <div class="doc-body">
+        <p class="post-lead">
+          Det meste av skatt kommer når noe skjer: du tjener, du selger, du vinner. Formuesskatten er
+          annerledes. Den kommer hvert år, for den forbrytelsen det er å fortsatt eie ting. For de
+          fleste husholdninger er den en avrundingsfeil. For en FIRE-sparer er den en
+          designbegrensning, for hele strategien går ut på å eie ganske mye og så leve sakte av det.
+        </p>
+
+        <h2><span class="h2-spot spot-tile"><img src="/assets/spot/SpotTaxes.svg" alt="" /></span>Slik ser den ut i 2026</h2>
+        <p>
+          Mekanikken er enkel. Legg sammen nettoformuen: investeringer, kontanter, bolig til
+          ligningsverdi, minus gjeld. Trekk fra bunnfradraget, 1,9 millioner kroner for en enslig i
+          2026, 3,8 millioner for ektefeller som lignes sammen. Resten skattlegges med 1,0 prosent i
+          året, stigende til 1,1 prosent på nettoformue over 21,5 millioner (43 millioner for par).
+          To ting demper: børsnoterte aksjer og aksjefond verdsettes til 80 prosent av markedsverdi,
+          og egen bolig verdsettes langt under salgsverdi, med en rabatt som krymper over 14
+          millioner i boligverdi.
+        </p>
+
+        <div class="stats-bar">
+          <div class="stat-item"><div class="stat-num">1,9M</div><div class="stat-label">kroner i bunnfradrag først (enslig, 2026)</div></div>
+          <div class="stat-item"><div class="stat-num">1,0%</div><div class="stat-label">i året, over bunnfradraget</div></div>
+          <div class="stat-item"><div class="stat-num">80%</div><div class="stat-label">verdien aksjer telles med</div></div>
+        </div>
+
+        <h2><span class="h2-spot spot-tile"><img src="/assets/spot/SpotPotGold.svg" alt="" /></span>Et regneeksempel</h2>
+        <p>
+          Ta en enslig FIRE-sparer med 8 millioner kroner i aksjefond og ingenting annet, ingen
+          gjeld, leier bolig. Fondene telles til 80 prosent: 6,4 millioner. Minus bunnfradraget på
+          1,9 millioner gjenstår 4,5 millioner skattepliktig. Med 1,0 prosent blir det 45 000 kroner,
+          hvert år, uansett om du solgte noe eller ikke. Er pensjonsbudsjettet ditt 400 000 i året,
+          la formuesskatten nettopp mer enn en tidel på toppen. Potten din finansierer ikke bare
+          livet ditt; den finansierer sin egen eksistens.
+        </p>
+        <p>
+          Derfor bommer et serviett-FIRE-tall lavt i Norge. Potten må dekke forbruket pluss sin egen
+          årlige skatteregning, og skatteregningen vokser med potten. De to jager hverandre i en
+          liten spiral, og det er akkurat den typen regnestykke en prognosemotor bør gjøre for deg,
+          ikke en serviett.
+        </p>
+
+        <div class="cmp-wrap">
+          <table class="cmp">
+            <thead><tr><th>Eiendel</th><th>Telles med (2026)</th></tr></thead>
+            <tbody>
+              <tr><td>Børsnoterte aksjer, aksjefond, ASK</td><td>80 % av markedsverdi</td></tr>
+              <tr><td>Bankinnskudd, kontanter</td><td>100 %</td></tr>
+              <tr><td>Primærbolig</td><td>En brøkdel av markedsverdi, rabatten krymper over 14M</td></tr>
+              <tr><td>IPS-sparing</td><td class="yes">Helt unntatt</td></tr>
+              <tr><td>Gjeld</td><td>Trekkes fra (avkortes forholdsmessig mot rabatterte eiendeler)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2><span class="h2-spot spot-tile"><img src="/assets/spot/SpotIPS.svg" alt="" /></span>Det stille unntaket</h2>
+        <p>
+          Én linje i tabellen fortjener rampelys: IPS-sparing er helt unntatt formuesskatt. Penger på
+          den individuelle pensjonskontoen er rett og slett ikke med i grunnlaget. Det gjør IPS til
+          den eneste vanlige måten en norsk FIRE-sparer kan skjerme en del av potten fra den årlige
+          skatten, mot prisen kontoens alderslås koster. Byttet er reelt og personlig, og jeg går
+          gjennom det i <a href="/no/blog/ips-eller-ask/">IPS eller ASK, hva planen vil ha</a>.
+        </p>
+
+        <h2><span class="h2-spot spot-tile"><img src="/assets/spot/SpotIdea.svg" alt="" /></span>Å leve med den</h2>
+        <p>
+          Tre ærlige observasjoner. For det første betyr parets doble bunnfradrag, 3,8 millioner, at
+          en toperson-FIRE-plan betaler mye mindre enn dobbelt av ingenting: fordeling av formue
+          betyr noe. For det andre flytter satser og innslagspunkt seg nesten hvert budsjettår, så en
+          plan bør behandle dem som årets vær, ikke klima. For det tredje finnes skatten enten du
+          realiserer gevinst eller ikke, så «bare aldri selg» er ingen strategi mot den. Potten må
+          dimensjoneres for den, og det bøyer
+          <a href="/no/blog/fire-tall-norge/">hele det norske FIRE-tallet</a> et hakk opp, samtidig
+          som pensjonssystemet bøyer det ned.
+        </p>
+
+        <div class="post-cta">
+          <img src="/assets/mascot-globe.svg" width="96" height="96" loading="lazy" decoding="async" alt="" style="margin:0 auto 8px;display:block;" />
+          <h2 style="border:0;padding:0;">Runway gjør regnestykket for deg</h2>
+          <p class="js-prelaunch">Runway regner formuesskatten inn i hver prognose: bunnfradrag, verdsettelsesrabatter, det årlige draget. Frihetsalderen din er gratis, og appen lanseres på App Store 25. august 2026. Betaen er åpen nå.</p>
+          <p class="js-live">Runway regner formuesskatten inn i hver prognose: bunnfradrag, verdsettelsesrabatter, det årlige draget. Frihetsalderen din er gratis.</p>
+          <a href="https://testflight.apple.com/join/mW9JahfG" class="btn-primary js-prelaunch" target="_blank" rel="noopener">Prøv betaen i TestFlight</a>
+          <a href="https://apps.apple.com/app/id6784426559" class="btn-primary js-live" target="_blank" rel="noopener">Last ned gratis fra App Store</a>
+        </div>
+
+        <h2>Ofte stilt</h2>
+        <div class="faq-list" style="margin-top:20px;">
+          <details>
+            <summary>Hva er satsene for formuesskatt i 2026?<span class="summary-icon">+</span></summary>
+            <div class="faq-body"><p>Nettoformue over 1,9 millioner kroner (3,8 millioner for ektefeller som lignes sammen) skattlegges med 1,0 prosent i året, og delen over 21,5 millioner (43 millioner for par) med 1,1 prosent. Børsnoterte aksjer og aksjefond telles til 80 prosent av verdien; primærbolig verdsettes langt under markedsverdi med en rabatt som krymper over 14 millioner.</p></div>
+          </details>
+          <details>
+            <summary>Hvor mye formuesskatt betaler en portefølje på 8 millioner kroner?<span class="summary-icon">+</span></summary>
+            <div class="faq-body"><p>For en enslig med 8 millioner i aksjefond og ingenting annet i 2026: 80 prosent verdsettelse gir 6,4 millioner, minus bunnfradraget på 1,9 millioner gjenstår 4,5 millioner, og 1,0 prosent av det er 45 000 kroner i året.</p></div>
+          </details>
+          <details>
+            <summary>Slipper aksjesparekontoen (ASK) formuesskatt?<span class="summary-icon">+</span></summary>
+            <div class="faq-body"><p>Nei. ASK-beholdninger telles med samme 80 prosent verdsettelse som andre børsnoterte aksjer. Det ene vanlige skjulet er IPS-kontoen, som er helt unntatt fra grunnlaget, men låst til 62 år.</p></div>
+          </details>
+          <details>
+            <summary>Betaler jeg formuesskatt selv om jeg aldri selger?<span class="summary-icon">+</span></summary>
+            <div class="faq-body"><p>Ja. Formuesskatten beregnes av det du eier, ikke av det du selger. Det er nettopp derfor en FIRE-pott må dimensjoneres til å bære sin egen årlige skatteregning i tillegg til forbruket ditt.</p></div>
+          </details>
+        </div>
+
+        <div class="author-box">
+          <img src="/assets/mascot-proud.svg" alt="" width="54" height="54" />
+          <div>
+            <h3>Skrevet av Dylan, skaperen av Runway</h3>
+            <p>Italiener som flyttet til Norge, og bygger FIRE-planleggeren på tvers av landegrenser som ikke fantes for en som meg. Runway kjører helt på iPhonen din. Det er et pedagogisk planleggingsverktøy, ikke økonomisk rådgivning eller skatterådgivning.</p>
+          </div>
+        </div>
+
+        <p><strong>Dimensjoner potten ærlig:</strong> start med den gratis <a href="/no/calculators/fire/">FIRE-kalkulatoren</a>, og la Runway legge på formuesskatt-draget ordentlig.</p>
+        <p class="updated" style="margin-top:32px;">Kilder verdt å sjekke selv:
+          <a href="https://www.skatteetaten.no" target="_blank" rel="noopener">skatteetaten.no</a> og
+          de årlige satstabellene på
+          <a href="https://www.regjeringen.no" target="_blank" rel="noopener">regjeringen.no</a>.
+          Tallene gjelder inntektsåret 2026 og flytter seg de fleste år.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="/no/" class="footer-logo">
+        <img class="logo-mark" src="/assets/icons/ludyem.png" alt="" width="22" height="22" />
+        Ludyem
+      </a>
+      <div class="footer-links">
+        <a href="/no/calculators/">Kalkulatorer</a>
+        <a href="/no/blog/">Blogg</a>
+        <a href="/no/privacy">Personvern</a>
+        <a href="/no/terms">Vilkår</a>
+        <a href="/no/support">Hjelp</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Bytt til lyst tema"><svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></svg><span class="theme-toggle-label">Light</span></button>
+      <p class="footer-copy">&copy; 2026 Ludyem AS &middot; Ikke finansiell rådgivning</p>
+    </div>
+  </footer>
+
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "49d37aff4f004e438964546d578dc096"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

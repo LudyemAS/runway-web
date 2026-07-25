@@ -16,6 +16,11 @@ Key facts:
 
 ## Guides (English)
 - [The FIRE number in Norway](https://runwayfire.com/blog/fire-number-norway/): the 4% rule, then wealth tax, ASK, and the state pension
+- [The ASK account for FIRE](https://runwayfire.com/blog/ask-account-norway/): deposits withdrawn first tax-free, and why that order matters
+- [Norway's wealth tax and FIRE](https://runwayfire.com/blog/wealth-tax-norway-fire/): 2026 rates, valuation discounts, a worked example
+- [The skjermingsfradrag explained](https://runwayfire.com/blog/skjermingsfradrag-explained/): Norway's compounding shielding deduction
+- [IPS vs ASK](https://runwayfire.com/blog/ips-vs-ask-norway/): the 2026 cap rise, the age-62 lock, which to fill first
+- [Folketrygden and FIRE](https://runwayfire.com/blog/state-pension-early-retirement-norway/): the pension bridge that shrinks your number
 - [Exit tax when leaving Norway](https://runwayfire.com/blog/exit-tax-leaving-norway/): what emigrating costs on unrealised gains
 - [FIRE calculators for retiring abroad](https://runwayfire.com/blog/fire-calculator-retire-abroad/): tool comparison for cross-border moves
 - [FIRE apps for iPhone](https://runwayfire.com/blog/fire-apps-iphone/): the native iOS field compared
