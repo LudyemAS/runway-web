@@ -74,7 +74,7 @@
     "mainEntity": [
       { "@type": "Question", "name": "Which countries does Runway model?", "acceptedAnswer": { "@type": "Answer", "text": "Norway as the home country, plus 17 retirement destinations with real 2026 tax packs: Italy, Spain, Portugal, France, Greece, Cyprus, Switzerland, the United Kingdom, Germany, the Netherlands, Sweden, Denmark, the United States, Canada, Australia, Mexico, and Thailand. Anywhere else runs on a generic baseline so the plan still works." } },
       { "@type": "Question", "name": "What does a destination pack actually include?", "acceptedAnswer": { "@type": "Answer", "text": "The rules that move a drawdown: the destination's tax on realised investment gains, on rental income, and on pensions, any wealth tax, any favourable regime with its honest time window, spending in local currency through an FX scenario, and Norway's exit tax priced on the way out." } },
-      { "@type": "Question", "name": "Will Runway add more home countries?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Norway is the first home country; the engine already carries native-capable packs for several more, and the home-country rollout is next on the roadmap after launch." } }
+      { "@type": "Question", "name": "Will Runway add more home countries?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Norway is the first, and for now the only country you can plan from. The engine already carries full home packs for Italy, France, Germany, the Netherlands, Sweden, the United Kingdom, the United States, Canada and Australia, each with that country's own accounts, tax bands and pension rules. They are built and tested but not yet switched on in the app; they arrive in an update after the Norwegian launch, and this page changes the day they do." } }
     ]
   }
   </script>
@@ -121,11 +121,18 @@
     <div class="hero-spot spot-tile" style="margin:26px 0 20px;"><img src="/assets/spot/SpotGlobe.svg" alt="" width="88" height="88" /></div>
     <p class="page-label">Countries</p>
     <h1>Every country Runway models</h1>
-    <p class="subtitle">
+    <p class="subtitle js-preglobal">
       One home country and 17 retirement destinations, each with a real 2026 tax pack: what the
       destination charges on your drawdown, any wealth tax or special regime with its honest time
       window, spending in local currency, and Norway's exit tax priced on the way out. A country
       without a pack still runs on a generic baseline, so no dream is off the table.
+    </p>
+    <p class="subtitle js-global">
+      Ten countries you can plan from and 18 modelled with a real 2026 tax pack: what each one
+      charges on your drawdown, any wealth tax or special regime with its honest time window,
+      spending in local currency, and the exit tax priced on the way out where your home country
+      charges one. A country without a pack still runs on a generic baseline, so no dream is off
+      the table.
     </p>
 
     <div class="doc-body">
@@ -133,22 +140,22 @@
         <table class="cmp">
           <thead><tr><th>Country</th><th>Role</th><th>Investment gains (2026)</th><th>Wealth tax</th></tr></thead>
           <tbody>
-              <tr><td><a href="/countries/norway/">🇳🇴 Norway</a></td><td>Home country</td><td>37.84% effective on shares, softened by skjerming + ASK</td><td>Yes, threshold levy</td></tr>
-              <tr><td><a href="/countries/italy/">🇮🇹 Italy</a></td><td>Destination</td><td>26% flat (imposta sostitutiva)</td><td>0.2% on financial assets (imposta di bollo)</td></tr>
+              <tr><td><a href="/countries/norway/">🇳🇴 Norway</a></td><td><span class="js-preglobal">Home country</span><span class="js-global">Home + destination</span></td><td>37.84% effective on shares, softened by skjerming + ASK</td><td>Yes, threshold levy</td></tr>
+              <tr><td><a href="/countries/italy/">🇮🇹 Italy</a></td><td><span class="js-preglobal">Destination</span><span class="js-global">Home + destination</span></td><td>26% flat (imposta sostitutiva)</td><td>0.2% on financial assets (imposta di bollo)</td></tr>
               <tr><td><a href="/countries/spain/">🇪🇸 Spain</a></td><td>Destination</td><td>Progressive savings scale</td><td>Levied above regional thresholds</td></tr>
               <tr><td><a href="/countries/portugal/">🇵🇹 Portugal</a></td><td>Destination</td><td>28% flat</td><td>None</td></tr>
-              <tr><td><a href="/countries/france/">🇫🇷 France</a></td><td>Destination</td><td>31.4% flat (PFU, 2026)</td><td>None</td></tr>
+              <tr><td><a href="/countries/france/">🇫🇷 France</a></td><td><span class="js-preglobal">Destination</span><span class="js-global">Home + destination</span></td><td>31.4% flat (PFU, 2026)</td><td>None</td></tr>
               <tr><td><a href="/countries/greece/">🇬🇷 Greece</a></td><td>Destination</td><td>7% flat (foreign-pensioner regime) (15y window)</td><td>None</td></tr>
               <tr><td><a href="/countries/cyprus/">🇨🇾 Cyprus</a></td><td>Destination</td><td>None on securities gains (17y window)</td><td>None</td></tr>
               <tr><td><a href="/countries/switzerland/">🇨🇭 Switzerland</a></td><td>Destination</td><td>None (private capital gains untaxed)</td><td>~0.46% yearly (Zurich-representative)</td></tr>
-              <tr><td><a href="/countries/united-kingdom/">🇬🇧 United Kingdom</a></td><td>Destination</td><td>24% flat (CGT on investments)</td><td>None</td></tr>
-              <tr><td><a href="/countries/germany/">🇩🇪 Germany</a></td><td>Destination</td><td>~18.5% effective on equity funds (26.375% headline)</td><td>None</td></tr>
-              <tr><td><a href="/countries/netherlands/">🇳🇱 Netherlands</a></td><td>Destination</td><td>None (no tax on realised gains)</td><td>About 2% of portfolio value yearly (Box 3)</td></tr>
-              <tr><td><a href="/countries/sweden/">🇸🇪 Sweden</a></td><td>Destination</td><td>30% flat (capital income)</td><td>None</td></tr>
+              <tr><td><a href="/countries/united-kingdom/">🇬🇧 United Kingdom</a></td><td><span class="js-preglobal">Destination</span><span class="js-global">Home + destination</span></td><td>24% flat (CGT on investments)</td><td>None</td></tr>
+              <tr><td><a href="/countries/germany/">🇩🇪 Germany</a></td><td><span class="js-preglobal">Destination</span><span class="js-global">Home + destination</span></td><td>~18.5% effective on equity funds (26.375% headline)</td><td>None</td></tr>
+              <tr><td><a href="/countries/netherlands/">🇳🇱 Netherlands</a></td><td><span class="js-preglobal">Destination</span><span class="js-global">Home + destination</span></td><td>None (no tax on realised gains)</td><td>About 2% of portfolio value yearly (Box 3)</td></tr>
+              <tr><td><a href="/countries/sweden/">🇸🇪 Sweden</a></td><td><span class="js-preglobal">Destination</span><span class="js-global">Home + destination</span></td><td>30% flat (capital income)</td><td>None</td></tr>
               <tr><td><a href="/countries/denmark/">🇩🇰 Denmark</a></td><td>Destination</td><td>Progressive (27% then 42%)</td><td>None</td></tr>
-              <tr><td><a href="/countries/united-states/">🇺🇸 United States</a></td><td>Destination</td><td>Progressive (LTCG 0/15/20 stacking)</td><td>None</td></tr>
-              <tr><td><a href="/countries/canada/">🇨🇦 Canada</a></td><td>Destination</td><td>~14.5% effective (50% of gains taxed)</td><td>None</td></tr>
-              <tr><td><a href="/countries/australia/">🇦🇺 Australia</a></td><td>Destination</td><td>~16% effective (50% CGT discount)</td><td>None</td></tr>
+              <tr><td><a href="/countries/united-states/">🇺🇸 United States</a></td><td><span class="js-preglobal">Destination</span><span class="js-global">Home + destination</span></td><td>Progressive (LTCG 0/15/20 stacking)</td><td>None</td></tr>
+              <tr><td><a href="/countries/canada/">🇨🇦 Canada</a></td><td><span class="js-preglobal">Destination</span><span class="js-global">Home + destination</span></td><td>~14.5% effective (50% of gains taxed)</td><td>None</td></tr>
+              <tr><td><a href="/countries/australia/">🇦🇺 Australia</a></td><td><span class="js-preglobal">Destination</span><span class="js-global">Home + destination</span></td><td>~16% effective (50% CGT discount)</td><td>None</td></tr>
               <tr><td><a href="/countries/mexico/">🇲🇽 Mexico</a></td><td>Destination</td><td>10% flat (listed shares)</td><td>None</td></tr>
               <tr><td><a href="/countries/thailand/">🇹🇭 Thailand</a></td><td>Destination</td><td>Progressive, on remitted income</td><td>None</td></tr>
           </tbody>
@@ -175,7 +182,7 @@
       <div class="faq-list" style="margin-top:20px;">
           <details>
             <summary>Which countries does Runway model?<span class="summary-icon">+</span></summary>
-            <div class="faq-body"><p>Norway as the home country, plus 17 retirement destinations with real 2026 tax packs: Italy, Spain, Portugal, France, Greece, Cyprus, Switzerland, the United Kingdom, Germany, the Netherlands, Sweden, Denmark, the United States, Canada, Australia, Mexico, and Thailand. Anywhere else runs on a generic baseline so the plan still works.</p></div>
+            <div class="faq-body"><p class="js-preglobal">Norway as the home country, plus 17 retirement destinations with real 2026 tax packs: Italy, Spain, Portugal, France, Greece, Cyprus, Switzerland, the United Kingdom, Germany, the Netherlands, Sweden, Denmark, the United States, Canada, Australia, Mexico, and Thailand. Anywhere else runs on a generic baseline so the plan still works.</p><p class="js-global">Eighteen countries with real 2026 tax packs: Norway, Italy, Spain, Portugal, France, Greece, Cyprus, Switzerland, the United Kingdom, Germany, the Netherlands, Sweden, Denmark, the United States, Canada, Australia, Mexico, and Thailand. Ten of them work as a home country you can plan from, and every one of them works as a retirement destination. Anywhere else runs on a generic baseline so the plan still works.</p></div>
           </details>
           <details>
             <summary>What does a destination pack actually include?<span class="summary-icon">+</span></summary>
@@ -183,7 +190,7 @@
           </details>
           <details>
             <summary>Will Runway add more home countries?<span class="summary-icon">+</span></summary>
-            <div class="faq-body"><p>Yes. Norway is the first home country; the engine already carries native-capable packs for several more, and the home-country rollout is next on the roadmap after launch.</p></div>
+            <div class="faq-body"><p class="js-preglobal">Yes. Norway is the first, and for now the only country you can plan from. The engine already carries full home packs for Italy, France, Germany, the Netherlands, Sweden, the United Kingdom, the United States, Canada and Australia, each with that country's own accounts, tax bands and pension rules. They are built and tested but not yet switched on in the app; they arrive in an update after the Norwegian launch, and this page changes the day they do.</p><p class="js-global">Yes, and nine have already landed. You can plan from Norway, Italy, France, Germany, the Netherlands, Sweden, the United Kingdom, the United States, Canada and Australia, each on that country's own accounts, tax bands and pension rules. Live somewhere else and Runway still works: the plan runs on a generic baseline with a tax rate you set yourself.</p></div>
           </details>
       </div>
 
