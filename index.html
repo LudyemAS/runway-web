@@ -205,7 +205,7 @@
       <div class="hero-actions">
         <a href="https://testflight.apple.com/join/mW9JahfG" class="btn-primary js-prelaunch" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg> Try the beta on TestFlight</a>
         <a href="https://apps.apple.com/app/id6784426559" class="btn-primary js-live" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg> Download on the App Store</a>
-        <a href="#how" class="btn-secondary">See how it works</a>
+        <a href="#try" class="btn-secondary">Try the maths first</a>
       </div>
       <p class="js-prelaunch" style="font-size:13px;color:var(--muted);margin:14px auto 0;max-width:520px;">Free, early beta over TestFlight (iOS). Still rough in places, and I read every bit of feedback. Launching on the App Store August 25.</p>
       <p class="js-live" style="font-size:13px;color:var(--muted);margin:14px auto 0;max-width:520px;">Free on the App Store. iOS 26+, iPhone and iPad. Your freedom age is free, forever, no account needed.</p>
@@ -213,11 +213,69 @@
 
       <div class="stats-bar">
         <div class="stat-item"><div class="stat-num">1</div><div class="stat-label">Number: your freedom age</div></div>
-        <div class="stat-item"><div class="stat-num">400</div><div class="stat-label">Market futures simulated</div></div>
+        <div class="stat-item"><div class="stat-num">1,000</div><div class="stat-label">Market futures simulated</div></div>
         <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">Accounts or bank logins</div></div>
         <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Computed on-device</div></div>
       </div>
     </div>
+  </section>
+
+  <!-- Try the maths -->
+  <section id="try" class="alt">
+    <style>
+      .try-card { background: linear-gradient(160deg, var(--accent-soft), rgba(255,255,255,.02)); border: 1px solid var(--accent-line); border-radius: 24px; padding: 40px 32px 34px; max-width: 640px; margin: 0 auto; }
+      .try-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 26px auto 4px; max-width: 520px; text-align: left; }
+      @media (max-width: 560px) { .try-grid { grid-template-columns: 1fr; } }
+      .try-field label { display: block; font-size: 12px; font-weight: 600; letter-spacing: .3px; color: var(--muted); margin: 0 0 6px 4px; }
+      .try-in { position: relative; }
+      .try-in input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 12px 46px 12px 14px; font-size: 16px; color: var(--text); font-family: inherit; }
+      .try-in input:focus { outline: none; border-color: var(--accent-line); }
+      .try-in .unit { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 13px; color: var(--faint); }
+      .try-result { margin: 20px 0 2px; }
+      .try-kicker { display: block; font-size: 13px; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+      .try-age { font-size: clamp(52px, 10vw, 76px); font-weight: 800; line-height: 1.15; }
+      .try-note { font-size: 13px; color: var(--muted); max-width: 460px; margin: 4px auto 20px; line-height: 1.55; }
+    </style>
+    <div class="container text-center">
+      <div class="try-card">
+        <div class="section-label">Try it now</div>
+        <h2 class="section-title" style="font-size:clamp(24px,4.4vw,34px);">Your napkin freedom age, in ten seconds</h2>
+        <p class="section-sub" style="margin:0 auto;">Four numbers and the classic 4 percent rule. No email, nothing stored, it all runs in this page.</p>
+        <div class="try-grid">
+          <div class="try-field"><label for="try-age-in">Your age</label><div class="try-in"><input id="try-age-in" type="text" inputmode="numeric" value="30" /><span class="unit">yrs</span></div></div>
+          <div class="try-field"><label for="try-bal">Invested today</label><div class="try-in"><input id="try-bal" type="text" inputmode="numeric" value="500,000" /><span class="unit">kr</span></div></div>
+          <div class="try-field"><label for="try-mo">Investing per month</label><div class="try-in"><input id="try-mo" type="text" inputmode="numeric" value="15,000" /><span class="unit">kr</span></div></div>
+          <div class="try-field"><label for="try-sp">Spending per year</label><div class="try-in"><input id="try-sp" type="text" inputmode="numeric" value="360,000" /><span class="unit">kr</span></div></div>
+        </div>
+        <div class="try-result" aria-live="polite"><span class="try-kicker">Roughly free at</span><span class="try-age grad" id="try-out">56</span></div>
+        <p class="try-note" id="try-note">Napkin only: 25 times spending, 4 percent real growth. The app's engine adds your pensions, the ASK order and Norwegian taxes, and usually lands somewhere else.</p>
+        <a href="https://testflight.apple.com/join/mW9JahfG" class="btn-primary js-prelaunch" target="_blank" rel="noopener">Get your real number free</a>
+        <a href="https://apps.apple.com/app/id6784426559" class="btn-primary js-live" target="_blank" rel="noopener">Get your real number free</a>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var ids = ['try-age-in', 'try-bal', 'try-mo', 'try-sp'];
+        var out = document.getElementById('try-out');
+        var note = document.getElementById('try-note');
+        var BASE_NOTE = "Napkin only: 25 times spending, 4 percent real growth. The app's engine adds your pensions, the ASK order and Norwegian taxes, and usually lands somewhere else.";
+        function val(id) {
+          var v = (document.getElementById(id).value || '').replace(/[^0-9]/g, '');
+          return v ? parseInt(v, 10) : 0;
+        }
+        function compute() {
+          var age = val('try-age-in'), bal = val('try-bal'), mo = val('try-mo'), sp = val('try-sp');
+          if (age < 16 || age > 80 || sp <= 0) { out.textContent = '…'; note.textContent = 'Fill in your numbers above.'; return; }
+          var need = sp * 25, years = 0;
+          while (bal < need && years < 90 - age) { bal = bal * 1.04 + mo * 12; years++; }
+          if (bal < need) { out.textContent = '90+'; note.textContent = 'Not before 90 at this pace. The app ranks the levers that move it.'; }
+          else if (years === 0) { out.textContent = String(age); note.textContent = 'The napkin says you may already be there.'; }
+          else { out.textContent = String(age + years); note.textContent = BASE_NOTE; }
+        }
+        ids.forEach(function (id) { document.getElementById(id).addEventListener('input', compute); });
+        compute();
+      })();
+    </script>
   </section>
 
   <!-- Screenshots -->
@@ -327,7 +385,7 @@
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotFreedom.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Your freedom age</h3><p>The one number that matters: the age your money could carry you. It's the hook, and it's free forever, no account required.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotTargetHit.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Freedom number</h3><p>The pot you actually need, derived from your real spending and a safe 4% withdrawal, net of pensions, rental, and side income.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotIdea.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>The levers</h3><p>An opportunity engine that finds the doors you didn't open: "invest 300 more a month, retire two years sooner." Every lever shows its effect.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotSafeSpend.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Plan health</h3><p>A seeded Monte Carlo runs your plan through 400 simulated market futures and scores how often your money lasts the distance.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotSafeSpend.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Plan health</h3><p>A seeded Monte Carlo runs your plan through 1,000 simulated market futures and scores how often your money lasts the distance.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotGrowth.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Money over time</h3><p>Watch your pot grow, peak, and draw down year by year, with your freedom goal line anchored to today so progress reads honestly.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotMoneyMap.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Adaptive onboarding</h3><p>No side income? Runway never mentions it. No property? It skips the mortgage questions. It asks only what fits your life, nothing more.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotAssumptions.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Scenario lab</h3><p>Try the what-ifs side by side: a market crash, a later start, a different spend, a change in how you invest. Compare paths before you commit.</p></div>

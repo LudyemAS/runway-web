@@ -108,7 +108,7 @@
       <div class="hero-actions">
         <a href="https://testflight.apple.com/join/mW9JahfG" class="btn-primary js-prelaunch" target="_blank" rel="noopener">Prøv betaen på TestFlight</a>
         <a href="https://apps.apple.com/app/id6784426559" class="btn-primary js-live" target="_blank" rel="noopener">Last ned på App Store</a>
-        <a href="#slik-fungerer-det" class="btn-secondary">Se hvordan det fungerer</a>
+        <a href="#try" class="btn-secondary">Prøv regnestykket først</a>
       </div>
       <p class="js-prelaunch" style="font-size:13px;color:var(--muted);margin:14px auto 0;max-width:520px;">Gratis, tidlig beta via TestFlight for iOS. Noe er fortsatt litt røft, og jeg leser alle tilbakemeldinger. Lanseres på App Store 25. august.</p>
       <p class="js-live" style="font-size:13px;color:var(--muted);margin:14px auto 0;max-width:520px;">Gratis på App Store. iOS 26+, iPhone og iPad. Frihetsalderen din er gratis for alltid, uten konto.</p>
@@ -116,11 +116,69 @@
 
       <div class="stats-bar">
         <div class="stat-item"><div class="stat-num">1</div><div class="stat-label">Tall: frihetsalderen din</div></div>
-        <div class="stat-item"><div class="stat-num">400</div><div class="stat-label">Simulerte markedsforløp</div></div>
+        <div class="stat-item"><div class="stat-num">1&#160;000</div><div class="stat-label">Simulerte markedsforløp</div></div>
         <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">Kontoer eller banktilkoblinger</div></div>
         <div class="stat-item"><div class="stat-num">100 %</div><div class="stat-label">Beregnet på enheten</div></div>
       </div>
     </div>
+  </section>
+
+  <!-- Prøv regnestykket -->
+  <section id="try" class="alt">
+    <style>
+      .try-card { background: linear-gradient(160deg, var(--accent-soft), rgba(255,255,255,.02)); border: 1px solid var(--accent-line); border-radius: 24px; padding: 40px 32px 34px; max-width: 640px; margin: 0 auto; }
+      .try-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 26px auto 4px; max-width: 520px; text-align: left; }
+      @media (max-width: 560px) { .try-grid { grid-template-columns: 1fr; } }
+      .try-field label { display: block; font-size: 12px; font-weight: 600; letter-spacing: .3px; color: var(--muted); margin: 0 0 6px 4px; }
+      .try-in { position: relative; }
+      .try-in input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 12px 46px 12px 14px; font-size: 16px; color: var(--text); font-family: inherit; }
+      .try-in input:focus { outline: none; border-color: var(--accent-line); }
+      .try-in .unit { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 13px; color: var(--faint); }
+      .try-result { margin: 20px 0 2px; }
+      .try-kicker { display: block; font-size: 13px; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+      .try-age { font-size: clamp(52px, 10vw, 76px); font-weight: 800; line-height: 1.15; }
+      .try-note { font-size: 13px; color: var(--muted); max-width: 460px; margin: 4px auto 20px; line-height: 1.55; }
+    </style>
+    <div class="container text-center">
+      <div class="try-card">
+        <div class="section-label">Prøv nå</div>
+        <h2 class="section-title" style="font-size:clamp(24px,4.4vw,34px);">Din frihetsalder på serviett, på ti sekunder</h2>
+        <p class="section-sub" style="margin:0 auto;">Fire tall og den klassiske 4-prosentregelen. Ingen e-post, ingenting lagres, alt regnes i denne siden.</p>
+        <div class="try-grid">
+          <div class="try-field"><label for="try-age-in">Alderen din</label><div class="try-in"><input id="try-age-in" type="text" inputmode="numeric" value="30" /><span class="unit">år</span></div></div>
+          <div class="try-field"><label for="try-bal">Investert i dag</label><div class="try-in"><input id="try-bal" type="text" inputmode="numeric" value="500 000" /><span class="unit">kr</span></div></div>
+          <div class="try-field"><label for="try-mo">Investerer per måned</label><div class="try-in"><input id="try-mo" type="text" inputmode="numeric" value="15 000" /><span class="unit">kr</span></div></div>
+          <div class="try-field"><label for="try-sp">Forbruk per år</label><div class="try-in"><input id="try-sp" type="text" inputmode="numeric" value="360 000" /><span class="unit">kr</span></div></div>
+        </div>
+        <div class="try-result" aria-live="polite"><span class="try-kicker">Omtrent fri ved</span><span class="try-age grad" id="try-out">56</span></div>
+        <p class="try-note" id="try-note">Bare serviett: 25 ganger forbruket, 4 prosent realvekst. Motoren i appen legger til pensjonen din, ASK-rekkefølgen og norske skatter, og lander som regel et annet sted.</p>
+        <a href="https://testflight.apple.com/join/mW9JahfG" class="btn-primary js-prelaunch" target="_blank" rel="noopener">Få det ekte tallet gratis</a>
+        <a href="https://apps.apple.com/app/id6784426559" class="btn-primary js-live" target="_blank" rel="noopener">Få det ekte tallet gratis</a>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var ids = ['try-age-in', 'try-bal', 'try-mo', 'try-sp'];
+        var out = document.getElementById('try-out');
+        var note = document.getElementById('try-note');
+        var BASE_NOTE = 'Bare serviett: 25 ganger forbruket, 4 prosent realvekst. Motoren i appen legger til pensjonen din, ASK-rekkefølgen og norske skatter, og lander som regel et annet sted.';
+        function val(id) {
+          var v = (document.getElementById(id).value || '').replace(/[^0-9]/g, '');
+          return v ? parseInt(v, 10) : 0;
+        }
+        function compute() {
+          var age = val('try-age-in'), bal = val('try-bal'), mo = val('try-mo'), sp = val('try-sp');
+          if (age < 16 || age > 80 || sp <= 0) { out.textContent = '…'; note.textContent = 'Fyll inn tallene dine over.'; return; }
+          var need = sp * 25, years = 0;
+          while (bal < need && years < 90 - age) { bal = bal * 1.04 + mo * 12; years++; }
+          if (bal < need) { out.textContent = '90+'; note.textContent = 'Ikke før 90 i dette tempoet. Appen rangerer grepene som flytter det.'; }
+          else if (years === 0) { out.textContent = String(age); note.textContent = 'Servietten sier du kan være der allerede.'; }
+          else { out.textContent = String(age + years); note.textContent = BASE_NOTE; }
+        }
+        ids.forEach(function (id) { document.getElementById(id).addEventListener('input', compute); });
+        compute();
+      })();
+    </script>
   </section>
 
   <section id="skjermbilder">
@@ -203,7 +261,7 @@
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotFreedom.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Frihetsalderen din</h3><p>Det ene tallet som betyr noe: alderen pengene dine kan bære deg fra. Det er gratis for alltid, uten konto.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotTargetHit.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Frihetstallet</h3><p>Potten du faktisk trenger, beregnet fra forbruket ditt og et trygt uttak på 4 prosent, etter pensjon, leieinntekter og sideinntekter.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotIdea.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Grepene</h3><p>Mulighetsmotoren finner dørene du ikke har åpnet: «Invester 300 kr mer i måneden og bli fri to år tidligere.» Hvert grep viser effekten.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotSafeSpend.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Planhelse</h3><p>En Monte Carlo-simulering kjører planen gjennom 400 markedsforløp og måler hvor ofte pengene varer hele veien.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotSafeSpend.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Planhelse</h3><p>En Monte Carlo-simulering kjører planen gjennom 1 000 markedsforløp og måler hvor ofte pengene varer hele veien.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotGrowth.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Pengene over tid</h3><p>Følg potten mens den vokser, når toppen og trekkes ned år for år, med frihetsmålet forankret til i dag.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotMoneyMap.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Tilpasset oppstart</h3><p>Ingen sideinntekt? Runway nevner den aldri. Ingen bolig? Da hopper appen over boliglånsspørsmålene. Du får bare spørsmål som passer livet ditt.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotAssumptions.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Scenariolab</h3><p>Prøv hva-om-scenarier side om side: børskrakk, senere start, annet forbruk eller en ny investeringsmiks. Sammenlign før du bestemmer deg.</p></div>
