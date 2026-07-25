@@ -1,0 +1,36 @@
+# Runway
+
+> Runway is a FIRE (Financial Independence, Retire Early) planner for iPhone and iPad, built for Norway first. It turns a person's finances into one number, the age they could stop working, using Norway's real tax rules: formuesskatt (wealth tax), the ASK account's capital-first withdrawals, the skjermingsfradrag, NAV and IPS pensions, and the utflyttingsskatt (exit tax) owed on leaving. It also prices retiring abroad: 17 destination countries are modelled with 2026 figures, plus a generic baseline for anywhere else. Everything is computed on-device with no account and no bank logins. Made by Ludyem AS. On the App Store from August 25, 2026; a free TestFlight beta is open before then.
+
+Key facts:
+- The freedom age and freedom number are free forever; Runway never paywalls "when can I stop working?". A Pro tier adds year-by-year depth, stress tests, scenario comparison, and solvers.
+- Platform: iOS 26 or later, iPhone and iPad. English and Norwegian Bokmål.
+- Privacy: no account, no bank connections; figures never leave the device.
+- All figures are income-year-stamped estimates (2026) from public sources, not financial or tax advice.
+
+## Start here
+- [What Runway is](https://runwayfire.com/): the product, screenshots, features, free vs Pro
+- [About Runway](https://runwayfire.com/about): who makes it and why
+- [Countries Runway models](https://runwayfire.com/countries/): every modelled country, and what the model covers per country
+- [Press kit](https://runwayfire.com/press): facts, copy, story, downloadable assets
+
+## Guides (English)
+- [The FIRE number in Norway](https://runwayfire.com/blog/fire-number-norway/): the 4% rule, then wealth tax, ASK, and the state pension
+- [Exit tax when leaving Norway](https://runwayfire.com/blog/exit-tax-leaving-norway/): what emigrating costs on unrealised gains
+- [FIRE calculators for retiring abroad](https://runwayfire.com/blog/fire-calculator-retire-abroad/): tool comparison for cross-border moves
+- [FIRE apps for iPhone](https://runwayfire.com/blog/fire-apps-iphone/): the native iOS field compared
+- [The 4 percent rule](https://runwayfire.com/blog/four-percent-rule/): where it holds and breaks
+- [Types of FIRE](https://runwayfire.com/blog/types-of-fire/): Lean, Fat, Coast, Barista
+- [Coast FIRE](https://runwayfire.com/blog/coast-fire/) and [Barista FIRE](https://runwayfire.com/blog/barista-fire/)
+- [All posts](https://runwayfire.com/blog/)
+
+## Free calculators
+- [FIRE calculator](https://runwayfire.com/calculators/fire/), [Coast FIRE](https://runwayfire.com/calculators/coast-fire/), [Barista FIRE](https://runwayfire.com/calculators/barista-fire/), [savings rate](https://runwayfire.com/calculators/savings-rate/), [compound interest](https://runwayfire.com/calculators/compound-interest/), [mortgage](https://runwayfire.com/calculators/mortgage/)
+
+## Norsk (Norwegian Bokmål)
+- [Forside](https://runwayfire.com/no/), [blogg](https://runwayfire.com/no/blog/), [kalkulatorer](https://runwayfire.com/no/calculators/)
+- [FIRE-tallet i Norge](https://runwayfire.com/no/blog/fire-tall-norge/), [utflyttingsskatt](https://runwayfire.com/no/blog/utflyttingsskatt-norge/)
+
+## Company
+- [Support](https://runwayfire.com/support), [Privacy](https://runwayfire.com/privacy), [Terms](https://runwayfire.com/terms)
+- Contact: support@runwayfire.com

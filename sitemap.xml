@@ -285,4 +285,10 @@
     <xhtml:link rel="alternate" hreflang="nb-NO" href="https://runwayfire.com/no/terms" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/terms" />
   </url>
+  <url>
+    <loc>https://runwayfire.com/about</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/about" />
+  </url>
 </urlset>
