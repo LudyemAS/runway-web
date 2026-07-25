@@ -475,4 +475,18 @@
     <xhtml:link rel="alternate" hreflang="nb-NO" href="https://runwayfire.com/no/blog/folketrygden-tidlig-pensjon/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/blog/state-pension-early-retirement-norway/" />
   </url>
+  <url>
+    <loc>https://runwayfire.com/blog/norway-fire-index-2026/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/blog/norway-fire-index-2026/" />
+    <xhtml:link rel="alternate" hreflang="nb-NO" href="https://runwayfire.com/no/blog/norge-fire-indeksen-2026/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/blog/norway-fire-index-2026/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/no/blog/norge-fire-indeksen-2026/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/blog/norway-fire-index-2026/" />
+    <xhtml:link rel="alternate" hreflang="nb-NO" href="https://runwayfire.com/no/blog/norge-fire-indeksen-2026/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/blog/norway-fire-index-2026/" />
+  </url>
 </urlset>

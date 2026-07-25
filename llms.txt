@@ -14,6 +14,9 @@ Key facts:
 - [Countries Runway models](https://runwayfire.com/countries/): every modelled country, and what the model covers per country
 - [Press kit](https://runwayfire.com/press): facts, copy, story, downloadable assets
 
+## Original data
+- [The Norway FIRE Index 2026](https://runwayfire.com/blog/norway-fire-index-2026/): representative households run through 2026 rules for Norway + 17 destinations. Key findings: at equal spending power, leaving Norway came out 1 to 3 years LATER everywhere (the ~2M kr exit tax eats the tax savings); a 100k kr/yr cheaper life abroad flips most destinations to 2 to 3 years earlier. Tables CC BY 4.0.
+
 ## Guides (English)
 - [The FIRE number in Norway](https://runwayfire.com/blog/fire-number-norway/): the 4% rule, then wealth tax, ASK, and the state pension
 - [The ASK account for FIRE](https://runwayfire.com/blog/ask-account-norway/): deposits withdrawn first tax-free, and why that order matters
