@@ -291,4 +291,118 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/about" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/about" />
   </url>
+  <url>
+    <loc>https://runwayfire.com/countries/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/norway/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/norway/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/norway/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/italy/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/italy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/italy/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/spain/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/spain/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/spain/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/portugal/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/portugal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/portugal/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/france/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/france/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/france/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/greece/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/greece/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/greece/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/cyprus/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/cyprus/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/cyprus/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/switzerland/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/switzerland/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/switzerland/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/united-kingdom/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/united-kingdom/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/united-kingdom/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/germany/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/germany/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/germany/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/netherlands/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/netherlands/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/netherlands/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/sweden/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/sweden/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/sweden/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/denmark/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/denmark/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/denmark/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/united-states/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/united-states/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/united-states/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/canada/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/canada/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/canada/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/australia/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/australia/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/australia/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/mexico/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/mexico/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/mexico/" />
+  </url>
+  <url>
+    <loc>https://runwayfire.com/countries/thailand/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://runwayfire.com/countries/thailand/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://runwayfire.com/countries/thailand/" />
+  </url>
 </urlset>
