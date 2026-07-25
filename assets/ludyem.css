@@ -307,6 +307,13 @@ details[open] .summary-icon { transform: rotate(45deg); color: var(--accent2); }
 html.is-prelaunch .js-live { display: none !important; }
 html.is-live .js-prelaunch { display: none !important; }
 
+/* ── Home-country availability toggle (Norway-only to multi-country). See /assets/launch.js.
+   The <html> element carries .is-preglobal or .is-global. Separate from the launch toggle
+   above because they flip on different events: launch is a storefront date, this is a
+   shipped build, so a page can be live and still pre-global. ── */
+html.is-preglobal .js-global { display: none !important; }
+html.is-global .js-preglobal { display: none !important; }
+
 /* ── Blog visuals: pros/cons cards, in-post screenshots, pullquotes, stat rows ── */
 .verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
 @media (max-width: 620px) { .verdict-grid { grid-template-columns: 1fr; } }
