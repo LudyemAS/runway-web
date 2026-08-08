@@ -5,7 +5,15 @@ The standalone marketing + support site for **Runway**, served at **runwayfire.c
 
 Split out of `LudyemAS/ludyem-web` (where it lived under `/runway`) on 2026-07-23 so Runway
 has its own domain instead of being a subfolder of `ludyem.dev`. Tend and Workouts stay on
-`ludyem.dev`; `ludyem.dev/runway/*` now 301-redirects here.
+`ludyem.dev`; `ludyem.dev/runway/*` now forwards here.
+
+That forward is **not a 301** — ludyem.dev is GitHub Pages, which cannot issue server-side
+redirects, so each old path is a stub page with `<meta http-equiv="refresh">`, a JS
+`location.replace`, and a `rel="canonical"` pointing at its runwayfire.com twin. Google treats
+that as a soft redirect and can, for a while, keep indexing the ludyem.dev URL instead — it did
+exactly that to `/blog/` in August 2026. So: never link to `ludyem.dev/runway/*` from anywhere,
+and keep the stubs' canonicals correct. A true 301 needs ludyem.dev's DNS moved to Cloudflare
+(it is on Porkbun nameservers today) plus a redirect rule.
 
 ## Layout
 - `index.html`, `privacy.html`, `terms.html`, `support.html`, `press.html`, `about.html` — core pages
