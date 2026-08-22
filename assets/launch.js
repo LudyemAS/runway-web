@@ -3,7 +3,7 @@
    <html> before anything renders. Two INDEPENDENT toggles live here, because the two
    things they track happen on different events.
 
-   1. Launch state, driven by a DATE (the App Store storefront going live):
+   1. Launch state, driven by a HAND-SET FLAG plus a date (the storefront going live):
 
      class="js-prelaunch"  shows only BEFORE launch (beta / waitlist CTAs)
      class="js-live"       shows only AFTER launch (App Store CTAs)
@@ -41,10 +41,19 @@
             (isNorwegian ? NORWAY_LAUNCH : WORLDWIDE_LAUNCH);
   var LAUNCH = Date.parse(iso);
 
+  // A date cannot know whether App Review approved the build. It only knows what day it
+  // is, and on 2026-08-25 it would have flipped all 73 pages to their App Store CTAs
+  // while apps.apple.com/app/id6784426559 still answered 404, sending the /no/ mirror's
+  // readers (the only audience who could buy) to a dead link. So the dates above are now
+  // NECESSARY BUT NOT SUFFICIENT: this master gate is flipped BY HAND on the day the
+  // storefront actually serves the app, exactly like GLOBAL_HOME below. Set it to true
+  // and push, and each page still waits for its own storefront's date.
+  var LAUNCHED = false;
+
   var override = null;
   try { override = localStorage.getItem('runwayLive'); } catch (e) {}
 
-  var live = override === '1' || (override !== '0' && Date.now() >= LAUNCH);
+  var live = override === '1' || (override !== '0' && LAUNCHED && Date.now() >= LAUNCH);
 
   // ── Home-country availability ────────────────────────────────────────────────────
   // Runway ships Norway-first: Norway is the only country you can PLAN FROM, even though
