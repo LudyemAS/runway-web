@@ -71,7 +71,7 @@
       {
         "@type": "Question",
         "name": "Hva er forskjellen på Barista FIRE og Coast FIRE?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Begge lar deg lette på gassen, men på ulike måter. Barista FIRE handler om inntekt: du beholder deltidsarbeid slik at potten bare dekker gapet i forbruket ditt, og du tar ut av den nå. Coast FIRE handler om potten: du har allerede investert nok til at den vokser til hele tallet ditt på egen hånd, så du kan slutte å spare og la den vokse urørt med rentes rente." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Begge lar deg lette på gassen, men på ulike måter. Barista FIRE handler om inntekt: du beholder deltidsarbeid slik at potten bare dekker gapet i forbruket ditt, og du tar ut av den nå. Coast FIRE handler om potten: du har allerede investert nok til at den vokser til hele tallet ditt på egen hånd, så du kan slutte å spare og la den vokse urørt med renters rente." }
       },
       {
         "@type": "Question",
@@ -194,7 +194,7 @@
 
       <h2><span class="h2-spot spot-tile"><img src="/assets/spot/SpotSideIncome.svg" alt="" /></span>Hvorfor deltidsinntekt krymper potten så mye</h2>
       <p>
-        Her ligger vektstangen. Etter <a href="/no/blog/fire-prosent-regelen/">4-prosentregelen</a> trenger
+        Her ligger det store grepet. Etter <a href="/no/blog/fire-prosent-regelen/">4-prosentregelen</a> trenger
         hver krone av årsforbruket porteføljen din må dekke, omtrent 25 kroner investert bak seg. Så hver
         krone av forbruket deltidsjobben din dekker i stedet, sparer deg for rundt 25 kroner i potten. En
         beskjeden deltidsinntekt kan derfor barbere overraskende mye av tallet. Trekk deltidsinntekten fra
@@ -239,7 +239,7 @@
         </details>
         <details>
           <summary>Barista FIRE vs. Coast FIRE?<span class="summary-icon">+</span></summary>
-          <div class="faq-body"><p>Barista FIRE handler om inntekt: du beholder deltidsarbeid slik at potten bare dekker gapet, og du tar ut av den nå. Coast FIRE handler om potten: du har investert nok til at den vokser til hele tallet ditt på egen hånd, så du slutter å spare og lar den vokse med rentes rente. Du kan være begge deler samtidig.</p></div>
+          <div class="faq-body"><p>Barista FIRE handler om inntekt: du beholder deltidsarbeid slik at potten bare dekker gapet, og du tar ut av den nå. Coast FIRE handler om potten: du har investert nok til at den vokser til hele tallet ditt på egen hånd, så du slutter å spare og lar den vokse med renters rente. Du kan være begge deler samtidig.</p></div>
         </details>
         <details>
           <summary>Må deltidsinntekten dekke alt?<span class="summary-icon">+</span></summary>
@@ -316,7 +316,7 @@
         var verdict = el("verdict"), vtxt = el("verdict-txt"), explain = el("out-explain");
         if (invested >= barista && isFinite(barista)) {
           verdict.className = "calc-verdict is-good";
-          vtxt.textContent = "Du kan Barista nå";
+          vtxt.textContent = "Barista FIRE er innen rekkevidde";
           explain.innerHTML = "Deltidsinntekten din dekker <strong>" + money(parttime) + "</strong>/år, så potten din trenger bare å dekke resten, og det gjør den.";
         } else {
           verdict.className = "calc-verdict is-wait";
