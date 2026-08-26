@@ -145,7 +145,7 @@
           </div>
         </div>
         <div class="calc-field">
-          <label for="income">Annual take-home income <span class="hint">— after tax, in your pocket</span></label>
+          <label for="income">Annual take-home income <span class="hint">after tax, in your pocket</span></label>
           <div class="calc-input"><input type="number" id="income" value="650000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
@@ -153,15 +153,15 @@
           <div class="calc-input"><input type="number" id="spend" value="400000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
-          <label for="invested">Invested so far <span class="hint">— pensions + brokerage + funds</span></label>
+          <label for="invested">Invested so far <span class="hint">pensions + brokerage + funds</span></label>
           <div class="calc-input"><input type="number" id="invested" value="300000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
-          <label for="ret">Expected return <span class="hint">— after inflation (real)</span></label>
+          <label for="ret">Expected return <span class="hint">after inflation (real)</span></label>
           <div class="calc-range"><input type="range" id="ret" value="5" min="1" max="9" step="0.5" aria-label="Expected real return, percent per year" /><span class="rv" id="ret-v">5.0%</span></div>
         </div>
         <div class="calc-field">
-          <label for="wr">Withdrawal rate <span class="hint">— the 4% rule</span></label>
+          <label for="wr">Withdrawal rate <span class="hint">the 4% rule</span></label>
           <div class="calc-range"><input type="range" id="wr" value="4" min="2.5" max="5" step="0.1" aria-label="Safe withdrawal rate, percent per year" /><span class="rv" id="wr-v">4.0%</span></div>
         </div>
       </div>
@@ -325,7 +325,7 @@
       var inputs = ["income", "spend", "invested", "ret", "wr"].map(el);
 
       function money(n) {
-        if (!isFinite(n)) return "—";
+        if (!isFinite(n)) return "-";
         var s = Math.round(n).toLocaleString("en-US");
         return cur === "kr" ? "kr " + s : cur + s;
       }
@@ -362,7 +362,7 @@
         if (reached && years === 0) {
           sub.innerHTML = "Your investments already cover this spending.";
         } else if (spend >= income) {
-          sub.innerHTML = "You're spending everything you earn — trim spending to start the clock.";
+          sub.innerHTML = "You're spending everything you earn, so trim spending to start the clock.";
         } else if (!reached) {
           sub.innerHTML = "At this rate the pot doesn't get there within 75 years. Try saving more or a higher return.";
         } else {

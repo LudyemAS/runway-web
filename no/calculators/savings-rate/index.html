@@ -144,7 +144,7 @@
           </div>
         </div>
         <div class="calc-field">
-          <label for="income">Årlig nettolønn <span class="hint">— etter skatt, det du får utbetalt</span></label>
+          <label for="income">Årlig nettolønn <span class="hint">etter skatt, det du får utbetalt</span></label>
           <div class="calc-input"><input type="number" id="income" value="650000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
@@ -152,15 +152,15 @@
           <div class="calc-input"><input type="number" id="spend" value="400000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
-          <label for="invested">Investert så langt <span class="hint">— pensjon + aksjer + fond</span></label>
+          <label for="invested">Investert så langt <span class="hint">pensjon + aksjer + fond</span></label>
           <div class="calc-input"><input type="number" id="invested" value="300000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
-          <label for="ret">Forventet avkastning <span class="hint">— etter inflasjon (realavkastning)</span></label>
+          <label for="ret">Forventet avkastning <span class="hint">etter inflasjon (realavkastning)</span></label>
           <div class="calc-range"><input type="range" id="ret" value="5" min="1" max="9" step="0.5" aria-label="Forventet realavkastning, prosent per år" /><span class="rv" id="ret-v">5,0 %</span></div>
         </div>
         <div class="calc-field">
-          <label for="wr">Uttaksgrad <span class="hint">— 4-prosentregelen</span></label>
+          <label for="wr">Uttaksgrad <span class="hint">4-prosentregelen</span></label>
           <div class="calc-range"><input type="range" id="wr" value="4" min="2.5" max="5" step="0.1" aria-label="Trygg uttaksgrad, prosent per år" /><span class="rv" id="wr-v">4,0 %</span></div>
         </div>
       </div>
@@ -171,13 +171,13 @@
         <div class="out-sub" id="out-sub">Med denne raten, omtrent <strong>22 år</strong> til økonomisk uavhengighet.</div>
         <div class="out-rows">
           <div class="out-row"><span class="k">År til uavhengighet</span><span class="v" id="out-years">22</span></div>
-          <div class="out-row"><span class="k">Frihetstallet ditt</span><span class="v" id="out-fire">kr&#160;10&#160;000&#160;000</span></div>
+          <div class="out-row"><span class="k">FIRE-tallet ditt</span><span class="v" id="out-fire">kr&#160;10&#160;000&#160;000</span></div>
           <div class="out-row"><span class="k">Du sparer hvert år</span><span class="v" id="out-save">kr&#160;250&#160;000</span></div>
         </div>
         <details class="calc-method">
           <summary>Slik regnes det ut</summary>
           <div class="method-body">
-            <p><strong>Spareraten</strong> din er det du beholder delt på det du får utbetalt. <strong>Frihetstallet</strong> ditt er årsforbruket delt på uttaksgraden. Deretter lar vi det du allerede har, pluss det du sparer hvert år, vokse med <strong>realavkastningen</strong> din (etter inflasjon) til potten når det tallet, og teller årene.</p>
+            <p><strong>Spareraten</strong> din er det du beholder delt på det du får utbetalt. <strong>FIRE-tallet</strong> ditt er årsforbruket delt på uttaksgraden. Deretter lar vi det du allerede har, pluss det du sparer hvert år, vokse med <strong>realavkastningen</strong> din (etter inflasjon) til potten når det tallet, og teller årene.</p>
             <p>Den forutsetter flat inntekt og forbruk, og ser bort fra skatt og pensjon, som varierer fra land til land og kan flytte den reelle datoen med år. Det er et raskt førsteanslag, ikke rådgivning.</p>
           </div>
         </details>
@@ -198,7 +198,7 @@
         uavhengighet på omtrent like mange år. Når du har sett raten din, er det naturlige neste steget
         <a href="/no/calculators/fire/">FIRE-kalkulatoren</a>, som gjør den om til en alder, og
         <a href="/no/blog/fire-prosent-regelen/">4-prosentregelen</a>, som forklarer multiplikatoren bak
-        frihetstallet ditt.
+        FIRE-tallet ditt.
       </p>
 
       <figure class="figure">
@@ -360,7 +360,7 @@
         if (reached && years === 0) {
           sub.innerHTML = "Investeringene dine dekker allerede dette forbruket.";
         } else if (spend >= income) {
-          sub.innerHTML = "Du bruker opp alt du tjener — kutt forbruket for å starte klokka.";
+          sub.innerHTML = "Du bruker opp alt du tjener, så kutt forbruket for å starte klokka.";
         } else if (!reached) {
           sub.innerHTML = "Med denne raten når ikke potten fram innen 75 år. Prøv å spare mer eller høyere avkastning.";
         } else {

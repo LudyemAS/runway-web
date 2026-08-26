@@ -61,7 +61,7 @@
       {
         "@type": "Question",
         "name": "Hva er Barista FIRE?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Barista FIRE er en form for delvis pensjon der du forlater karrieren på heltid, men beholder litt deltidsarbeid eller en mindre stressende jobb. Den inntekten dekker en del av årsforbruket ditt, så den investerte potten bare må dekke det gjenværende gapet. Navnet kommer fra deltidsjobber – en barista-vakt er det klassiske eksempelet – som folk tar for den jevne inntekten, og noen ganger godene, mer enn for karrieren." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Barista FIRE er en form for delvis pensjon der du forlater karrieren på heltid, men beholder litt deltidsarbeid eller en mindre stressende jobb. Den inntekten dekker en del av årsforbruket ditt, så den investerte potten bare må dekke det gjenværende gapet. Navnet kommer fra deltidsjobber (en barista-vakt er det klassiske eksempelet) som folk tar for den jevne inntekten, og noen ganger godene, mer enn for karrieren." }
       },
       {
         "@type": "Question",
@@ -148,7 +148,7 @@
           <div class="calc-input"><input type="number" id="spend" value="420000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
-          <label for="parttime">Deltidsinntekt <span class="hint">— per år, etter skatt</span></label>
+          <label for="parttime">Deltidsinntekt <span class="hint">per år, etter skatt</span></label>
           <div class="calc-input"><input type="number" id="parttime" value="180000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
@@ -156,7 +156,7 @@
           <div class="calc-input"><input type="number" id="invested" value="2000000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
-          <label for="wr">Uttaksgrad <span class="hint">— 4-prosentregelen</span></label>
+          <label for="wr">Uttaksgrad <span class="hint">4-prosentregelen</span></label>
           <div class="calc-range"><input type="range" id="wr" value="4" min="2.5" max="5" step="0.1" aria-label="Trygg uttaksgrad, prosent per år" /><span class="rv" id="wr-v">4,0 %</span></div>
         </div>
       </div>
@@ -174,7 +174,7 @@
         <details class="calc-method">
           <summary>Slik er dette regnet ut</summary>
           <div class="method-body">
-            <p>Det <strong>fulle FIRE-tallet</strong> ditt er årlig forbruk delt på uttaksgraden. Trekk først deltidsinntekten fra forbruket, så er det mindre <strong>gapet</strong> delt på samme grad ditt <strong>Barista FIRE-tall</strong> – potten porteføljen din faktisk må dekke.</p>
+            <p>Det <strong>fulle FIRE-tallet</strong> ditt er årlig forbruk delt på uttaksgraden. Trekk først deltidsinntekten fra forbruket, så er det mindre <strong>gapet</strong> delt på samme grad ditt <strong>Barista FIRE-tall</strong>: potten porteføljen din faktisk må dekke.</p>
             <p>Det forutsetter at netto deltidsinntekt er stabil og dekker resten av forbruket, regner i faste kroner, og ser bort fra nyanser i skatt og ytelser og broen før du begynner å ta ut av potten. Ikke skatterådgivning.</p>
           </div>
         </details>
@@ -187,8 +187,8 @@
         <strong>Barista FIRE</strong> er delvis pensjon. Du forlater karrieren på heltid, men beholder
         litt deltidsarbeid eller en mindre stressende jobb, og den inntekten dekker en del av årsforbruket
         ditt. Siden jobben ikke lenger skal finansiere alt, blir potten du må spare langt mindre enn et
-        fullt pensjonstall. Navnet kommer fra typen deltidsjobb – en barista-vakt er det klassiske
-        eksempelet – som folk tar for den jevne inntekten, og noen ganger godene, mer enn for karrieren.
+        fullt pensjonstall. Navnet kommer fra typen deltidsjobb (en barista-vakt er det klassiske
+        eksempelet) som folk tar for den jevne inntekten, og noen ganger godene, mer enn for karrieren.
         Det er en av <a href="/no/calculators/">de ulike FIRE-typene</a>, og ofte den raskeste å nå.
       </p>
 
@@ -199,7 +199,7 @@
         krone av forbruket deltidsjobben din dekker i stedet, sparer deg for rundt 25 kroner i potten. En
         beskjeden deltidsinntekt kan derfor barbere overraskende mye av tallet. Trekk deltidsinntekten fra
         forbruket, og det er bare det gjenværende <strong>gapet</strong>, delt på uttaksgraden din, som
-        investeringene dine må dekke – ikke hele <a href="/no/calculators/fire/">FIRE-tallet</a> dette
+        investeringene dine må dekke, ikke hele <a href="/no/calculators/fire/">FIRE-tallet</a> dette
         krymper fra.
       </p>
 
@@ -317,7 +317,7 @@
         if (invested >= barista && isFinite(barista)) {
           verdict.className = "calc-verdict is-good";
           vtxt.textContent = "Du kan Barista nå";
-          explain.innerHTML = "Deltidsinntekten din dekker <strong>" + money(parttime) + "</strong>/år, så potten din trenger bare å dekke resten – og det gjør den.";
+          explain.innerHTML = "Deltidsinntekten din dekker <strong>" + money(parttime) + "</strong>/år, så potten din trenger bare å dekke resten, og det gjør den.";
         } else {
           verdict.className = "calc-verdict is-wait";
           vtxt.textContent = "Fortsett å spare";

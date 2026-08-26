@@ -161,11 +161,11 @@
           <div class="calc-input"><input type="number" id="spend" value="420000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
-          <label for="ret">Expected return <span class="hint">— after inflation (real)</span></label>
+          <label for="ret">Expected return <span class="hint">after inflation (real)</span></label>
           <div class="calc-range"><input type="range" id="ret" value="5" min="1" max="9" step="0.5" aria-label="Expected real return, percent per year" /><span class="rv" id="ret-v">5.0%</span></div>
         </div>
         <div class="calc-field">
-          <label for="wr">Withdrawal rate <span class="hint">— the 4% rule</span></label>
+          <label for="wr">Withdrawal rate <span class="hint">the 4% rule</span></label>
           <div class="calc-range"><input type="range" id="wr" value="4" min="2.5" max="5" step="0.1" aria-label="Safe withdrawal rate, percent per year" /><span class="rv" id="wr-v">4.0%</span></div>
         </div>
       </div>
@@ -314,7 +314,7 @@
       var inputs = ["age", "target", "invested", "spend", "ret", "wr"].map(el);
 
       function money(n) {
-        if (!isFinite(n)) return "—";
+        if (!isFinite(n)) return "-";
         var s = Math.round(n).toLocaleString("en-US");
         return cur === "kr" ? "kr " + s : cur + s;
       }
@@ -343,7 +343,7 @@
         el("out-coast").textContent = money(coast);
         el("out-fire").textContent = money(fire);
         el("out-proj").textContent = money(proj);
-        el("out-prog").textContent = isFinite(prog) ? Math.round(Math.min(prog, 9.99) * 100) + "%" : "—";
+        el("out-prog").textContent = isFinite(prog) ? Math.round(Math.min(prog, 9.99) * 100) + "%" : "-";
         el("out-proj").previousElementSibling.textContent = "Your pot by " + target + ", left alone";
 
         var verdict = el("verdict"), vtxt = el("verdict-txt"), explain = el("out-explain");

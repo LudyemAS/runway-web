@@ -148,7 +148,7 @@
           <div class="calc-input"><input type="number" id="age" value="32" min="16" max="80" step="1" inputmode="numeric" /><span class="unit">år</span></div>
         </div>
         <div class="calc-field">
-          <label for="invested">Investert så langt <span class="hint">— pensjon + aksjer + fond</span></label>
+          <label for="invested">Investert så langt <span class="hint">pensjon + aksjer + fond</span></label>
           <div class="calc-input"><input type="number" id="invested" value="600000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
@@ -160,11 +160,11 @@
           <div class="calc-input"><input type="number" id="spend" value="420000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
-          <label for="ret">Forventet avkastning <span class="hint">— etter inflasjon (realavkastning)</span></label>
+          <label for="ret">Forventet avkastning <span class="hint">etter inflasjon (realavkastning)</span></label>
           <div class="calc-range"><input type="range" id="ret" value="5" min="1" max="9" step="0.5" aria-label="Forventet realavkastning, prosent per år" /><span class="rv" id="ret-v">5,0 %</span></div>
         </div>
         <div class="calc-field">
-          <label for="wr">Uttaksgrad <span class="hint">— 4-prosentregelen</span></label>
+          <label for="wr">Uttaksgrad <span class="hint">4-prosentregelen</span></label>
           <div class="calc-range"><input type="range" id="wr" value="4" min="2.5" max="5" step="0.1" aria-label="Trygg uttaksgrad, prosent per år" /><span class="rv" id="wr-v">4,0 %</span></div>
         </div>
       </div>
@@ -344,7 +344,7 @@
 
         var fire = w > 0 ? spend / w : Infinity;
         el("out-fire").textContent = money(fire);
-        el("out-mult").innerHTML = (w > 0 ? Math.round(1 / w) : "—") + "&times; forbruk";
+        el("out-mult").innerHTML = (w > 0 ? Math.round(1 / w) : "-") + "&times; forbruk";
 
         var outAge = el("out-age"), outWhen = el("out-when"), outYears = el("out-years");
 

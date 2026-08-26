@@ -149,7 +149,7 @@
           <div class="calc-input"><input type="number" id="spend" value="420000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
-          <label for="parttime">Part-time income <span class="hint">— per year, after tax</span></label>
+          <label for="parttime">Part-time income <span class="hint">per year, after tax</span></label>
           <div class="calc-input"><input type="number" id="parttime" value="180000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
@@ -157,7 +157,7 @@
           <div class="calc-input"><input type="number" id="invested" value="2000000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
-          <label for="wr">Withdrawal rate <span class="hint">— the 4% rule</span></label>
+          <label for="wr">Withdrawal rate <span class="hint">the 4% rule</span></label>
           <div class="calc-range"><input type="range" id="wr" value="4" min="2.5" max="5" step="0.1" aria-label="Safe withdrawal rate, percent per year" /><span class="rv" id="wr-v">4.0%</span></div>
         </div>
       </div>
@@ -289,7 +289,7 @@
       var inputs = ["spend", "parttime", "invested", "wr"].map(el);
 
       function money(n) {
-        if (!isFinite(n)) return "—";
+        if (!isFinite(n)) return "-";
         var s = Math.round(n).toLocaleString("en-US");
         return cur === "kr" ? "kr " + s : cur + s;
       }
@@ -319,7 +319,7 @@
         if (invested >= barista && isFinite(barista)) {
           verdict.className = "calc-verdict is-good";
           vtxt.textContent = "You could Barista now";
-          explain.innerHTML = "Your part-time income covers <strong>" + money(parttime) + "</strong>/yr, so your pot only has to cover the rest — and it does.";
+          explain.innerHTML = "Your part-time income covers <strong>" + money(parttime) + "</strong>/yr, so your pot only has to cover the rest, and it does.";
         } else {
           verdict.className = "calc-verdict is-wait";
           vtxt.textContent = "Keep saving";

@@ -153,7 +153,7 @@
           <div class="calc-input"><input type="number" id="monthly" value="5000" min="0" step="500" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
-          <label for="rate">Annual interest rate <span class="hint">— nominal, before inflation</span></label>
+          <label for="rate">Annual interest rate <span class="hint">nominal, before inflation</span></label>
           <div class="calc-range"><input type="range" id="rate" value="7" min="1" max="12" step="0.5" aria-label="Annual interest rate, percent per year" /><span class="rv" id="rate-v">7.0%</span></div>
         </div>
         <div class="calc-field">
@@ -303,7 +303,7 @@
       var inputs = ["principal", "monthly", "rate", "years"].map(el);
 
       function money(n) {
-        if (!isFinite(n)) return "—";
+        if (!isFinite(n)) return "-";
         var s = Math.round(n).toLocaleString("en-US");
         return cur === "kr" ? "kr " + s : cur + s;
       }
@@ -332,7 +332,7 @@
         el("out-sub").innerHTML = "<strong>" + money(interest) + "</strong> of that is pure growth.";
         el("out-contrib").textContent = money(contributions);
         el("out-interest").textContent = money(interest);
-        el("out-mult").textContent = contributions > 0 ? (finalBalance / contributions).toFixed(1) + "×" : "—";
+        el("out-mult").textContent = contributions > 0 ? (finalBalance / contributions).toFixed(1) + "×" : "-";
       }
 
       inputs.forEach(function (i) { i && i.addEventListener("input", compute); });

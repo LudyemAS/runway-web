@@ -149,7 +149,7 @@
           <div class="calc-input"><input type="number" id="age" value="32" min="16" max="80" step="1" inputmode="numeric" /><span class="unit">yrs</span></div>
         </div>
         <div class="calc-field">
-          <label for="invested">Invested so far <span class="hint">— pensions + brokerage + funds</span></label>
+          <label for="invested">Invested so far <span class="hint">pensions + brokerage + funds</span></label>
           <div class="calc-input"><input type="number" id="invested" value="600000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
@@ -161,11 +161,11 @@
           <div class="calc-input"><input type="number" id="spend" value="420000" min="0" step="10000" inputmode="numeric" /><span class="unit cur-unit">kr</span></div>
         </div>
         <div class="calc-field">
-          <label for="ret">Expected return <span class="hint">— after inflation (real)</span></label>
+          <label for="ret">Expected return <span class="hint">after inflation (real)</span></label>
           <div class="calc-range"><input type="range" id="ret" value="5" min="1" max="9" step="0.5" aria-label="Expected real return, percent per year" /><span class="rv" id="ret-v">5.0%</span></div>
         </div>
         <div class="calc-field">
-          <label for="wr">Withdrawal rate <span class="hint">— the 4% rule</span></label>
+          <label for="wr">Withdrawal rate <span class="hint">the 4% rule</span></label>
           <div class="calc-range"><input type="range" id="wr" value="4" min="2.5" max="5" step="0.1" aria-label="Safe withdrawal rate, percent per year" /><span class="rv" id="wr-v">4.0%</span></div>
         </div>
       </div>
@@ -323,7 +323,7 @@
       var inputs = ["age", "invested", "monthly", "spend", "ret", "wr"].map(el);
 
       function money(n) {
-        if (!isFinite(n)) return "—";
+        if (!isFinite(n)) return "-";
         var s = Math.round(n).toLocaleString("en-US");
         return cur === "kr" ? "kr " + s : cur + s;
       }
@@ -345,7 +345,7 @@
 
         var fire = w > 0 ? spend / w : Infinity;
         el("out-fire").textContent = money(fire);
-        el("out-mult").innerHTML = (w > 0 ? Math.round(1 / w) : "—") + "&times; spending";
+        el("out-mult").innerHTML = (w > 0 ? Math.round(1 / w) : "-") + "&times; spending";
 
         var outAge = el("out-age"), outWhen = el("out-when"), outYears = el("out-years");
 
