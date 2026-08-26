@@ -153,7 +153,7 @@
         </div>
         <div class="calc-field">
           <label for="rate">Årlig rente <span class="hint">— nominelt, før inflasjon</span></label>
-          <div class="calc-range"><input type="range" id="rate" value="7" min="1" max="12" step="0.5" aria-label="Årlig rente, prosent per år" /><span class="rv" id="rate-v">7.0%</span></div>
+          <div class="calc-range"><input type="range" id="rate" value="7" min="1" max="12" step="0.5" aria-label="Årlig rente, prosent per år" /><span class="rv" id="rate-v">7,0 %</span></div>
         </div>
         <div class="calc-field">
           <label for="years">Antall år</label>
@@ -205,7 +205,7 @@
           <text x="64" y="272" text-anchor="middle" class="fig-axis">Start</text>
           <text x="576" y="272" text-anchor="end" class="fig-axis">30 år senere</text>
         </svg>
-        <figcaption>Det jevne båndet er pengene du legger inn. Det teal båndet over er renters rente, og over flere tiår blir det den største delen.</figcaption>
+        <figcaption>Det jevne båndet er pengene du legger inn. Det turkise båndet over er renters rente, og over flere tiår blir det den største delen.</figcaption>
       </figure>
 
       <h2><span class="h2-spot spot-tile"><img src="/assets/spot/SpotGrowth.svg" alt="" /></span>Hvorfor månedlig renteberegning og jevne innskudd betyr noe</h2>
@@ -224,7 +224,7 @@
         tærer i det stille på det pengene er verdt, så realavkastningen — den inflasjonsjusterte avkastningen —
         ville vært lavere, ofte med to til tre prosentpoeng i året. En million om tjue år kjøper ikke det en
         million kjøper i dag. Derfor jobber seriøs pensjonsmatematikk, som
-        <a href="/no/blog/fire-tall-norge/">4-prosentregelen</a> og Runways egne prognoser, i faste
+        <a href="/no/blog/fire-prosent-regelen/">4-prosentregelen</a> og Runways egne prognoser, i faste
         kroner. Bruk denne kalkulatoren til å få en følelse av formen på veksten, og trekk fra for inflasjon
         før du stoler på hovedtallet.
       </p>
@@ -273,7 +273,7 @@
       <p class="updated" style="margin-top:32px;">Beslektet:
         <a href="/no/calculators/fire/">FIRE-kalkulator</a>,
         <a href="/no/calculators/coast-fire/">Coast FIRE-kalkulator</a> og
-        <a href="/no/blog/fire-tall-norge/">4-prosentregelen</a>.</p>
+        <a href="/no/blog/fire-prosent-regelen/">4-prosentregelen</a>.</p>
     </div>
   </main>
 
@@ -290,7 +290,7 @@
         <a href="/no/terms">Vilkår</a>
         <a href="/no/support">Støtte</a>
       </div>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme"><svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></svg><span class="theme-toggle-label">Light</span></button>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Bytt til lyst tema"><svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></svg><span class="theme-toggle-label">Lyst</span></button>
       <p class="footer-copy">&copy; 2026 Ludyem AS &middot; Ikke økonomisk rådgivning</p>
     </div>
   </footer>
@@ -302,7 +302,7 @@
       var inputs = ["principal", "monthly", "rate", "years"].map(el);
 
       function money(n) {
-        if (!isFinite(n)) return "—";
+        if (!isFinite(n)) return "-";
         var s = Math.round(n).toLocaleString("nb-NO");
         return cur === "kr" ? "kr " + s : cur + s;
       }
@@ -316,7 +316,7 @@
         var rate = +el("rate").value || 0;
         var years = Math.max(0, +el("years").value || 0);
 
-        el("rate-v").textContent = rate.toFixed(1) + "%";
+        el("rate-v").textContent = rate.toFixed(1).replace(".", ",") + " %";
 
         var rr = rate / 100 / 12;          // monthly rate
         var bal = principal;
@@ -331,7 +331,7 @@
         el("out-sub").innerHTML = "<strong>" + money(interest) + "</strong> av det er ren vekst.";
         el("out-contrib").textContent = money(contributions);
         el("out-interest").textContent = money(interest);
-        el("out-mult").textContent = contributions > 0 ? (finalBalance / contributions).toFixed(1) + "×" : "—";
+        el("out-mult").textContent = contributions > 0 ? (finalBalance / contributions).toFixed(1).replace(".", ",") + "×" : "-";
       }
 
       inputs.forEach(function (i) { i && i.addEventListener("input", compute); });

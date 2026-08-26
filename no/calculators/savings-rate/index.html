@@ -157,11 +157,11 @@
         </div>
         <div class="calc-field">
           <label for="ret">Forventet avkastning <span class="hint">— etter inflasjon (realavkastning)</span></label>
-          <div class="calc-range"><input type="range" id="ret" value="5" min="1" max="9" step="0.5" aria-label="Forventet realavkastning, prosent per år" /><span class="rv" id="ret-v">5.0%</span></div>
+          <div class="calc-range"><input type="range" id="ret" value="5" min="1" max="9" step="0.5" aria-label="Forventet realavkastning, prosent per år" /><span class="rv" id="ret-v">5,0 %</span></div>
         </div>
         <div class="calc-field">
           <label for="wr">Uttaksgrad <span class="hint">— 4-prosentregelen</span></label>
-          <div class="calc-range"><input type="range" id="wr" value="4" min="2.5" max="5" step="0.1" aria-label="Trygg uttaksgrad, prosent per år" /><span class="rv" id="wr-v">4.0%</span></div>
+          <div class="calc-range"><input type="range" id="wr" value="4" min="2.5" max="5" step="0.1" aria-label="Trygg uttaksgrad, prosent per år" /><span class="rv" id="wr-v">4,0 %</span></div>
         </div>
       </div>
 
@@ -197,7 +197,7 @@
         Det er derfor to personer med vidt forskjellige lønninger som sparer samme andel, når økonomisk
         uavhengighet på omtrent like mange år. Når du har sett raten din, er det naturlige neste steget
         <a href="/no/calculators/fire/">FIRE-kalkulatoren</a>, som gjør den om til en alder, og
-        <a href="/no/blog/fire-tall-norge/">4-prosentregelen</a>, som forklarer multiplikatoren bak
+        <a href="/no/blog/fire-prosent-regelen/">4-prosentregelen</a>, som forklarer multiplikatoren bak
         frihetstallet ditt.
       </p>
 
@@ -255,8 +255,8 @@
       <div class="post-cta">
         <img src="/assets/mascot-celebrate.svg" width="96" height="96" loading="lazy" decoding="async" alt="" style="margin:0 auto 8px;display:block;" />
         <h2 style="border:0;padding:0;">Gjør raten din om til en ekte frihetsalder</h2>
-        <p class="js-prelaunch">Runway tar spareraten din og bruker de faktiske skatte-, pensjons- og kontoreglene i landet ditt, kjører 1 000 markedsforløp over den, og viser grepene som trekker datoen nærmere. Bygd for Norge, lanseres på App Store 25. august 2026, og betaen er åpen nå.</p>
-        <p class="js-live">Runway tar spareraten din og bruker de faktiske skatte-, pensjons- og kontoreglene i landet ditt, kjører 1 000 markedsforløp over den, og viser grepene som trekker datoen nærmere. Frihetsalderen din er gratis, for alltid.</p>
+        <p class="js-prelaunch">Runway tar spareraten din og bruker de faktiske skatte-, pensjons- og kontoreglene i landet ditt, kjører 500 markedsforløp over den, og viser grepene som trekker datoen nærmere. Bygd for Norge, lanseres på App Store 25. august 2026, og betaen er åpen nå.</p>
+        <p class="js-live">Runway tar spareraten din og bruker de faktiske skatte-, pensjons- og kontoreglene i landet ditt, kjører 500 markedsforløp over den, og viser grepene som trekker datoen nærmere. Frihetsalderen din er gratis, for alltid.</p>
         <a href="https://testflight.apple.com/join/mW9JahfG" class="btn-primary js-prelaunch" target="_blank" rel="noopener">Prøv betaen på TestFlight</a>
         <a href="https://apps.apple.com/app/id6784426559" class="btn-primary js-live" target="_blank" rel="noopener">Last ned gratis på App Store</a>
       </div>
@@ -311,7 +311,7 @@
         <a href="/no/terms">Vilkår</a>
         <a href="/no/support">Støtte</a>
       </div>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme"><svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></svg><span class="theme-toggle-label">Light</span></button>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Bytt til lyst tema"><svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></svg><span class="theme-toggle-label">Lyst</span></button>
       <p class="footer-copy">&copy; 2026 Ludyem AS &middot; Ikke økonomisk rådgivning</p>
     </div>
   </footer>
@@ -323,7 +323,7 @@
       var inputs = ["income", "spend", "invested", "ret", "wr"].map(el);
 
       function money(n) {
-        if (!isFinite(n)) return "—";
+        if (!isFinite(n)) return "-";
         var s = Math.round(n).toLocaleString("nb-NO");
         return cur === "kr" ? "kr " + s : cur + s;
       }
@@ -339,8 +339,8 @@
         var r = (+el("ret").value || 0) / 100;
         var w = (+el("wr").value || 0) / 100;
 
-        el("ret-v").textContent = (+el("ret").value).toFixed(1) + "%";
-        el("wr-v").textContent = (+el("wr").value).toFixed(1) + "%";
+        el("ret-v").textContent = (+el("ret").value).toFixed(1).replace(".", ",") + " %";
+        el("wr-v").textContent = (+el("wr").value).toFixed(1).replace(".", ",") + " %";
 
         var savingsRate = income > 0 ? Math.max(0, income - spend) / income : 0;
         var annualSaving = Math.max(0, income - spend);
@@ -351,7 +351,7 @@
         while (bal < fire && years < 75) { bal = bal * (1 + r) + annualSaving; years++; }
         var reached = isFinite(fire) && bal >= fire;
 
-        el("out-big").textContent = Math.round(savingsRate * 100) + "%";
+        el("out-big").textContent = Math.round(savingsRate * 100) + " %";
         el("out-fire").textContent = money(fire);
         el("out-save").textContent = money(annualSaving);
         el("out-years").textContent = reached ? years : "75+";
@@ -364,7 +364,7 @@
         } else if (!reached) {
           sub.innerHTML = "Med denne raten når ikke potten fram innen 75 år. Prøv å spare mer eller høyere avkastning.";
         } else {
-          sub.innerHTML = "Med denne raten, omtrent <strong>" + years + (years === 1 ? " år" : " år") + "</strong> til økonomisk uavhengighet.";
+          sub.innerHTML = "Med denne raten, omtrent <strong>" + years + " år" + "</strong> til økonomisk uavhengighet.";
         }
       }
 

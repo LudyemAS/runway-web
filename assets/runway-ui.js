@@ -6,14 +6,23 @@
   var root = document.documentElement;
   function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
 
+  // The toggle is rendered from JS on every click, so its strings have to be localised
+  // here too. Translating only the markup left the /no/ pages reading "Light" the moment
+  // this ran. Keyed off <html lang>, same test the language switcher below uses.
+  var pageLang = (document.documentElement.lang || "en").toLowerCase();
+  var NO = pageLang.indexOf("nb") === 0 || pageLang.indexOf("no") === 0;
+  var COPY = NO
+    ? { light: "Lyst", dark: "M\u00f8rkt", toLight: "Bytt til lyst tema", toDark: "Bytt til m\u00f8rkt tema" }
+    : { light: "Light", dark: "Dark", toLight: "Switch to light theme", toDark: "Switch to dark theme" };
+
   // Footer light/dark toggle
   var toggle = document.getElementById("theme-toggle");
   function renderToggle() {
     if (!toggle) return;
     var t = current();
     var label = toggle.querySelector(".theme-toggle-label");
-    if (label) label.textContent = t === "light" ? "Dark" : "Light";
-    toggle.setAttribute("aria-label", "Switch to " + (t === "light" ? "dark" : "light") + " theme");
+    if (label) label.textContent = t === "light" ? COPY.dark : COPY.light;
+    toggle.setAttribute("aria-label", t === "light" ? COPY.toDark : COPY.toLight);
   }
   if (toggle) {
     toggle.addEventListener("click", function () {

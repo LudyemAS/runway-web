@@ -161,23 +161,23 @@
         </div>
         <div class="calc-field">
           <label for="ret">Forventet avkastning <span class="hint">— etter inflasjon (realavkastning)</span></label>
-          <div class="calc-range"><input type="range" id="ret" value="5" min="1" max="9" step="0.5" aria-label="Forventet realavkastning, prosent per år" /><span class="rv" id="ret-v">5.0%</span></div>
+          <div class="calc-range"><input type="range" id="ret" value="5" min="1" max="9" step="0.5" aria-label="Forventet realavkastning, prosent per år" /><span class="rv" id="ret-v">5,0 %</span></div>
         </div>
         <div class="calc-field">
           <label for="wr">Uttaksgrad <span class="hint">— 4-prosentregelen</span></label>
-          <div class="calc-range"><input type="range" id="wr" value="4" min="2.5" max="5" step="0.1" aria-label="Trygg uttaksgrad, prosent per år" /><span class="rv" id="wr-v">4.0%</span></div>
+          <div class="calc-range"><input type="range" id="wr" value="4" min="2.5" max="5" step="0.1" aria-label="Trygg uttaksgrad, prosent per år" /><span class="rv" id="wr-v">4,0 %</span></div>
         </div>
       </div>
 
       <div class="calc-out" aria-live="polite">
         <div class="calc-verdict is-wait" id="verdict"><span class="dot"></span> <span id="verdict-txt">Fortsett å spare</span></div>
         <div class="out-label">Coast FIRE-tall, i dag</div>
-        <div class="out-big" id="out-coast">kr&#160;2&#160;400&#160;000</div>
+        <div class="out-big" id="out-coast">kr&#160;1&#160;903&#160;548</div>
         <div class="out-sub" id="out-explain">Invester så mye, så kan du slutte å legge til og likevel coaste til hele tallet ditt innen 65.</div>
         <div class="out-rows">
           <div class="out-row"><span class="k">Hele FIRE-tallet</span><span class="v" id="out-fire">kr&#160;10&#160;500&#160;000</span></div>
-          <div class="out-row"><span class="k">Potten din ved 65, urørt</span><span class="v" id="out-proj">kr 3 900 000</span></div>
-          <div class="out-row"><span class="k">Fremgang mot Coast</span><span class="v" id="out-prog">38%</span></div>
+          <div class="out-row"><span class="k">Potten din ved 65, urørt</span><span class="v" id="out-proj">kr&#160;4&#160;964&#160;414</span></div>
+          <div class="out-row"><span class="k">Fremgang mot Coast</span><span class="v" id="out-prog">47 %</span></div>
         </div>
         <details class="calc-method">
           <summary>Slik regnes det ut</summary>
@@ -300,7 +300,7 @@
         <a href="/no/terms">Vilkår</a>
         <a href="/no/support">Støtte</a>
       </div>
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme"><svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></svg><span class="theme-toggle-label">Light</span></button>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Bytt til lyst tema"><svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></svg><span class="theme-toggle-label">Lyst</span></button>
       <p class="footer-copy">&copy; 2026 Ludyem AS &middot; Ikke økonomisk rådgivning</p>
     </div>
   </footer>
@@ -312,7 +312,7 @@
       var inputs = ["age", "target", "invested", "spend", "ret", "wr"].map(el);
 
       function money(n) {
-        if (!isFinite(n)) return "—";
+        if (!isFinite(n)) return "-";
         var s = Math.round(n).toLocaleString("nb-NO");
         return cur === "kr" ? "kr " + s : cur + s;
       }
@@ -328,8 +328,8 @@
         var r = (+el("ret").value || 0) / 100;
         var w = (+el("wr").value || 0) / 100;
 
-        el("ret-v").textContent = (+el("ret").value).toFixed(1) + "%";
-        el("wr-v").textContent = (+el("wr").value).toFixed(1) + "%";
+        el("ret-v").textContent = (+el("ret").value).toFixed(1).replace(".", ",") + " %";
+        el("wr-v").textContent = (+el("wr").value).toFixed(1).replace(".", ",") + " %";
 
         var n = Math.max(0, target - age);
         var fire = w > 0 ? spend / w : Infinity;
@@ -341,7 +341,7 @@
         el("out-coast").textContent = money(coast);
         el("out-fire").textContent = money(fire);
         el("out-proj").textContent = money(proj);
-        el("out-prog").textContent = isFinite(prog) ? Math.round(Math.min(prog, 9.99) * 100) + "%" : "—";
+        el("out-prog").textContent = isFinite(prog) ? Math.round(Math.min(prog, 9.99) * 100) + " %" : "-";
         el("out-proj").previousElementSibling.textContent = "Potten din ved " + target + ", urørt";
 
         var verdict = el("verdict"), vtxt = el("verdict-txt"), explain = el("out-explain");
