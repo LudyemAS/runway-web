@@ -36,8 +36,24 @@ so the App Store link never lands a reader on "not available in your country or 
 English landing page (`index.html`) is the deliberate exception, and sets `window.RUNWAY_LAUNCH`
 itself; an explicit page override always wins.
 
-**A new page needs nothing** beyond `<html class="is-prelaunch">` and the `launch.js` tag, which
-every page already has. Do not hardcode a launch date in a page.
+> **The `/no/` tree has retired from this mechanism (2026-08-27).** Norway launched, so those 26
+> pages have no second state left to switch to. The 75 `js-prelaunch` elements are deleted, their
+> `js-live` twins no longer carry the marker class, and the pages ship `<html class="is-live">`.
+> They now render the launched state with JavaScript off, which is the point: while they shipped
+> `is-prelaunch` as the no-JS default, a Norwegian reader without JS was being offered TestFlight
+> for an app that was already on the App Store.
+>
+> **English pages still carry both branches and must keep them** until their storefronts actually
+> serve. Verified 2026-08-27: `us`, `gb`, `se`, `de` and `dk` all answer 404.
+
+**A new page needs** `<html class="is-prelaunch">` and the `launch.js` tag if it is an English page,
+or `<html class="is-live">` and no branch markup if it lives under `/no/`. Do not hardcode a launch
+date in a page.
+
+**On 2026-09-15, do to the English tree what was done to `/no/`:** delete the `js-prelaunch`
+elements, strip the `js-live` markers, and ship `is-live`. At that point `launch.js` is down to the
+theme toggle and the language switcher, and the whole two-state mechanism plus the
+`html.is-prelaunch .js-live` rules in `ludyem.css` can go.
 
 **`LAUNCHED` is a third gate, and it is the one that is true today.** A date cannot know whether
 App Review approved the build, so `LAUNCHED` in `assets/launch.js` is flipped by hand once the
