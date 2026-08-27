@@ -39,6 +39,32 @@ itself; an explicit page override always wins.
 **A new page needs nothing** beyond `<html class="is-prelaunch">` and the `launch.js` tag, which
 every page already has. Do not hardcode a launch date in a page.
 
+**`LAUNCHED` is a third gate, and it is the one that is true today.** A date cannot know whether
+App Review approved the build, so `LAUNCHED` in `assets/launch.js` is flipped by hand once the
+storefront actually serves. It was set `true` on 2026-08-27, verified by fetching the listing
+rather than by trusting the calendar: `apps.apple.com/no/app/id6784426559` answered 200 while the
+`us`, `gb` and `se` storefronts answered 404.
+
+### THE APP STORE LINKS ARE PINNED TO NORWAY. Unpin them on 2026-09-15.
+
+Every App Store href on the site (146 of them) is
+`https://apps.apple.com/**no**/app/id6784426559`, not the storefront-neutral
+`https://apps.apple.com/app/id6784426559`.
+
+That is deliberate and it is temporary. While the app is Norway-only, the bare link is **broken**:
+Apple geolocates the visitor, and from any other region it serves a storefront error page, not the
+app. Verified 2026-08-27 by loading both. The `/no/` prefix guarantees the real listing.
+
+**On worldwide launch this inverts.** Once every storefront carries the app, the `/no/` prefix
+forces an American reader onto the Norwegian store instead of their own. At that point:
+
+1. Replace `apps.apple.com/no/app/id6784426559` with `apps.apple.com/app/id6784426559` sitewide.
+2. Re-check the English pre-launch copy, which currently reads "is on the App Store in Norway now,
+   and lands worldwide on 15 September 2026" in 41 places. After the worldwide date those sentences
+   sit inside `js-prelaunch` and stop rendering, but they are wrong if the date ever moves.
+3. `press.html` bypasses the toggle entirely, so its badge and App Store row are hand-edited. Check
+   them by eye.
+
 ### Home-country availability, driven by a HAND-SET FLAG
 
 | Class | Shows |
