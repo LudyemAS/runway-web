@@ -44,11 +44,16 @@
   // A date cannot know whether App Review approved the build. It only knows what day it
   // is, and on 2026-08-25 it would have flipped all 73 pages to their App Store CTAs
   // while apps.apple.com/app/id6784426559 still answered 404, sending the /no/ mirror's
-  // readers (the only audience who could buy) to a dead link. So the dates above are now
+  // readers (the only audience who could buy) to a dead link. So the dates above are
   // NECESSARY BUT NOT SUFFICIENT: this master gate is flipped BY HAND on the day the
-  // storefront actually serves the app, exactly like GLOBAL_HOME below. Set it to true
-  // and push, and each page still waits for its own storefront's date.
-  var LAUNCHED = false;
+  // storefront actually serves the app, exactly like GLOBAL_HOME below. Each page still
+  // waits for its own storefront's date after this is true.
+  //
+  // Flipped 2026-08-27, verified against the storefront rather than the calendar:
+  // apps.apple.com/no/app/id6784426559 resolves 200 (free, Finance), while the us, gb
+  // and se storefronts still answer 404. That is exactly the two-step rollout, so /no/
+  // goes live now and the English pages keep waiting for WORLDWIDE_LAUNCH.
+  var LAUNCHED = true;
 
   var override = null;
   try { override = localStorage.getItem('runwayLive'); } catch (e) {}
