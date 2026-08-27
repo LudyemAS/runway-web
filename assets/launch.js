@@ -60,6 +60,31 @@
 
   var live = override === '1' || (override !== '0' && LAUNCHED && Date.now() >= LAUNCH);
 
+  // ── App Store storefront ─────────────────────────────────────────────────────────
+  // While the app ships to Norway only, the storefront-NEUTRAL link is broken for
+  // everyone outside Norway: Apple geolocates the visitor and serves a storefront error
+  // page instead of the listing (verified 2026-08-27 by loading both). So every href in
+  // the markup is pinned to /no/, which always resolves.
+  //
+  // On WORLDWIDE_LAUNCH that inverts: /no/ would then force an American reader onto the
+  // Norwegian store instead of their own. That unpin used to be a hand-edit noted in
+  // MAINTENANCE.md, but the LAUNCHED flip above was a hand-edit too and it was missed by
+  // two days, so this one is derived instead. Once the worldwide date has passed and the
+  // master gate is open, drop the /no/ prefix at render time. The markup keeps the /no/
+  // form as the no-JS fallback, which is the safer of the two to be stuck on.
+  var worldwide = override === '1' ||
+                  (override !== '0' && LAUNCHED && Date.now() >= Date.parse(WORLDWIDE_LAUNCH));
+  if (worldwide) {
+    var unpin = function () {
+      var links = document.querySelectorAll('a[href*="apps.apple.com/no/app/"]');
+      for (var i = 0; i < links.length; i++) {
+        links[i].href = links[i].href.replace('apps.apple.com/no/app/', 'apps.apple.com/app/');
+      }
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', unpin);
+    else unpin();
+  }
+
   // ── Home-country availability ────────────────────────────────────────────────────
   // Runway ships Norway-first: Norway is the only country you can PLAN FROM, even though
   // the engine already carries native (home) packs for Italy, the US, the UK, Germany,

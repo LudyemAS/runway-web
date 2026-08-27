@@ -45,25 +45,31 @@ storefront actually serves. It was set `true` on 2026-08-27, verified by fetchin
 rather than by trusting the calendar: `apps.apple.com/no/app/id6784426559` answered 200 while the
 `us`, `gb` and `se` storefronts answered 404.
 
-### THE APP STORE LINKS ARE PINNED TO NORWAY. Unpin them on 2026-09-15.
+### The App Store links are pinned to Norway, and unpin themselves
 
-Every App Store href on the site (146 of them) is
-`https://apps.apple.com/**no**/app/id6784426559`, not the storefront-neutral
-`https://apps.apple.com/app/id6784426559`.
+Every App Store href in the markup is `https://apps.apple.com/**no**/app/id6784426559`, not the
+storefront-neutral `https://apps.apple.com/app/id6784426559`.
 
-That is deliberate and it is temporary. While the app is Norway-only, the bare link is **broken**:
-Apple geolocates the visitor, and from any other region it serves a storefront error page, not the
-app. Verified 2026-08-27 by loading both. The `/no/` prefix guarantees the real listing.
+That is deliberate. While the app is Norway-only the neutral link is **broken**: Apple geolocates
+the visitor and serves a storefront error page rather than the listing, verified 2026-08-27 by
+loading both. The `/no/` prefix always resolves.
 
-**On worldwide launch this inverts.** Once every storefront carries the app, the `/no/` prefix
-forces an American reader onto the Norwegian store instead of their own. At that point:
+**You do not have to undo this by hand.** On `WORLDWIDE_LAUNCH`, `/no/` would start forcing an
+American reader onto the Norwegian store, so `launch.js` drops the prefix at render time once that
+date has passed and `LAUNCHED` is true. This one is derived rather than hand-set on purpose: the
+`LAUNCHED` flip above is a hand-edit and it was missed by two days, and a second hand-edit with a
+calendar trigger is exactly the kind that gets forgotten. The markup keeps the `/no/` form as the
+no-JS fallback, which is the safer of the two to be stuck on.
 
-1. Replace `apps.apple.com/no/app/id6784426559` with `apps.apple.com/app/id6784426559` sitewide.
-2. Re-check the English pre-launch copy, which currently reads "is on the App Store in Norway now,
-   and lands worldwide on 15 September 2026" in 41 places. After the worldwide date those sentences
-   sit inside `js-prelaunch` and stop rendering, but they are wrong if the date ever moves.
-3. `press.html` bypasses the toggle entirely, so its badge and App Store row are hand-edited. Check
-   them by eye.
+Preview either side without waiting: `localStorage.setItem('runwayLive','1')` forces the unpinned
+form, `'0'` forces the pinned one.
+
+**Two things on that date are still yours by eye:**
+
+1. The 41 English pre-launch sentences reading "is on the App Store in Norway now, and lands
+   worldwide on 15 September 2026". After the worldwide date they sit inside `js-prelaunch` and
+   stop rendering, so they are harmless, but they are wrong if the date ever moves.
+2. `press.html` bypasses the toggle entirely. Its badge and App Store row are hand-edited.
 
 ### Home-country availability, driven by a HAND-SET FLAG
 
