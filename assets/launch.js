@@ -90,13 +90,22 @@
   // the engine already carries native (home) packs for Italy, the US, the UK, Germany,
   // France, Sweden, Canada, Australia and the Netherlands. Those stay dormant until the
   // multi-country home experience ships in an App Store build (RunwayFeatures
-  // .globalCountriesEnabled, hard-off in release today).
+  // .globalCountriesEnabled).
   //
   // That is a BUILD, not a date: it has to clear App Review, so this is flipped BY HAND
   // and never by a calendar. Claiming it early would advertise a home country nobody can
-  // actually pick. On the day that build is live, set this to true and push, and every
-  // .js-preglobal / .js-global pair on the site flips with it.
-  var GLOBAL_HOME = false;
+  // actually pick.
+  //
+  // TRUE since 2026-08-29: v1.0.3 (build 191) is READY_FOR_SALE with
+  // globalCountriesEnabled = true in the release branch, so onboarding asks where you live
+  // and the ten native packs are selectable. Verified against the App Store Connect API,
+  // not the calendar, exactly as LAUNCHED above was.
+  //
+  // Note this is INDEPENDENT of the storefront gates. Until WORLDWIDE_LAUNCH the English
+  // pages still render their pre-launch CTAs, so a US reader sees "Runway models the United
+  // States" beside a waitlist button. That pairing is intended: the modelling claim is true
+  // today, and the CTA stays honest about where you can buy.
+  var GLOBAL_HOME = true;
 
   var globalOverride = null;
   try { globalOverride = localStorage.getItem('runwayGlobal'); } catch (e) {}

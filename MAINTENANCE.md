@@ -86,6 +86,13 @@ form, `'0'` forces the pinned one.
    worldwide on 15 September 2026". After the worldwide date they sit inside `js-prelaunch` and
    stop rendering, so they are harmless, but they are wrong if the date ever moves.
 2. `press.html` bypasses the toggle entirely. Its badge and App Store row are hand-edited.
+   **Its Norway positioning was left in place on 2026-08-29, deliberately.** The tagline ("The FIRE
+   planner built for Norway"), the one-line and the ~50-word description all still say Norway, while
+   `index.html` and `about.html` now say "built to cross a border". That inconsistency is temporary
+   and chosen: the Norwegian press push is the campaign that is actually running, and "the first FIRE
+   planner built for Norway" is its hook. Re-cut those three copy blocks on the worldwide date, when
+   the pitch changes audience. Only the factual `Languages` row was corrected (it said English and
+   Norwegian Bokmål; the app ships en, nb, it, de and fr), because a journalist would print it.
 
 ### Home-country availability, driven by a HAND-SET FLAG
 
@@ -94,21 +101,46 @@ form, `'0'` forces the pinned one.
 | `js-preglobal` | while Norway is the only country you can plan FROM |
 | `js-global` | once other home countries are selectable |
 
-`GLOBAL_HOME` in `assets/launch.js`, currently `false`.
+`GLOBAL_HOME` in `assets/launch.js`, **`true` since 2026-08-29**.
 
-This one is **not** on a calendar on purpose. The engine already carries full home (native) packs
-for Italy, France, Germany, the Netherlands, Sweden, the United Kingdom, the United States, Canada
-and Australia, but they are dormant behind `RunwayFeatures.globalCountriesEnabled` in the app,
-which is hard-off in release. Turning them on takes a build that must clear App Review, so a date
-would advertise a home country nobody can pick yet.
+This one was **not** on a calendar on purpose: turning the home packs on took a build that had to
+clear App Review, so a date would have advertised a home country nobody could pick yet. Runway
+v1.0.3 (build 191) went `READY_FOR_SALE` on 2026-08-29 with `globalCountriesEnabled = true`, so
+onboarding now asks where you live and ten native packs are selectable. Verified against the App
+Store Connect API rather than the calendar, exactly as `LAUNCHED` was.
 
-**When that build is live on the App Store:**
-1. Set `GLOBAL_HOME = true` in `assets/launch.js`.
-2. Hand-edit the FAQ **JSON-LD** in `countries/index.html` to the `js-global` wording. CSS hides
-   the pre-global paragraph but structured data has no state, and Google wants `FAQPage` markup to
+**It is independent of the storefront gates above, and stays that way.** Until `WORLDWIDE_LAUNCH`
+the English pages still render pre-launch CTAs, so a US reader sees "Runway models the United
+States" beside a waitlist button. That pairing is intended: the modelling claim is true today and
+the CTA stays honest about where you can buy.
+
+> **The flip alone was NOT enough, and that is the lesson to carry.** This section used to imply
+> `GLOBAL_HOME` switched the site. It does not: the `js-preglobal` / `js-global` twins exist in
+> **`countries/index.html` only** (13 pairs). Every other home-country claim on the site is
+> ungated, so flipping the flag left four surfaces asserting Norway-only:
+>
+> - `countries/index.html` **`meta description` and `og:description`** ("Norway as the home
+>   country, and 17 retirement destinations"). Same stateless class as the JSON-LD below, and the
+>   one people actually see, in search results and link previews.
+> - `countries/index.html` FAQ answer *"What does a destination pack actually include?"*, which
+>   said "**Norway's** exit tax". The page subtitle got a global twin for that exact phrase; the
+>   FAQ answer did not. It now reads "where your home country charges one", true in both states.
+> - `index.html` roadmap card **"More home countries / Next"**, which advertised as upcoming the
+>   thing that had just shipped.
+> - `support.html` FAQ, in **both** the visible copy and its JSON-LD, and **`llms.txt`**, which is
+>   what AI crawlers read and has no state at all.
+>
+> **When adding any new home-country claim, either give it a twin or write it state-free.** Prefer
+> state-free: a sentence true before and after the flip cannot rot.
+
+**Done on 2026-08-29, kept as the checklist if this ever needs redoing:**
+1. `GLOBAL_HOME = true` in `assets/launch.js`.
+2. The FAQ **JSON-LD** in `countries/index.html`, to the `js-global` wording. CSS hides the
+   pre-global paragraph but structured data has no state, and Google wants `FAQPage` markup to
    match what a reader can see. Two answers there have twins: "Which countries does Runway model?"
    and "Will Runway add more home countries?".
-3. Re-check the destination counts in §2, which are phrased from a Norwegian's point of view.
+3. The four ungated surfaces in the callout above.
+4. The destination counts in §2, which were phrased from a Norwegian's point of view.
 
 Preview either state without waiting, from the browser console:
 
@@ -123,10 +155,15 @@ localStorage.removeItem('runwayGlobal')
 
 ## 2. Live counts (hand-maintained, they drift silently)
 
-### Destination count, currently **17**
+### Destination count, **reader-relative since 2026-08-29**
 
-18 country packs ship; a Norwegian reader sees 17 of them as destinations (everything except
-home). Country pages themselves are evergreen, but the count is spelled out in prose here:
+18 country packs ship. "17 destinations" was only ever true from a Norwegian's chair (everything
+except home), and once `GLOBAL_HOME` flipped, the reader's home stopped being knowable. **The
+English tree no longer states a destination count**: those places now say eighteen countries are
+modelled and all of them work as destinations, which is true for every reader and cannot rot.
+
+Two places keep 17 on purpose: the **`/no/` tree**, where the reader IS Norwegian, and the FIRE
+Index study (see below). Country pages themselves are evergreen. The old sweep:
 
 ```bash
 grep -rn "17 destination\|17 retirement\|17 destinasjon\|17 land\|17 pensjonsdestinasjoner" --include="*.html" --include="*.txt" .
@@ -142,7 +179,13 @@ grep -rn "17 destination\|17 retirement\|17 destinasjon\|17 land\|17 pensjonsdes
 and the teaser on `blog/index.html`) says 17 because that is how many destinations were *in the
 study run*. It is a dated result, not a live count. Re-running the study is what changes it.
 
-### Monte Carlo runs, currently **1,000**
+### Monte Carlo runs, currently **500**
+
+> Corrected 2026-08-29. The app dropped 1,000 to 500 on 2026-07-31 (an owner call: the batch cost
+> ~1.75x on every edit to steady a displayed percentage by under a point) and the landing page kept
+> claiming 1,000 for a month. The iOS repo gates this number against the constant with
+> `Scripts/scan-marketing-run-count.py`, but that scan cannot see this repo, so the site is the half
+> nothing checks. The source of truth is `RunwayFeatures.snapshotMonteCarloRuns`.
 
 Matches `RunwayFeatures.snapshotMonteCarloRuns` in the app (1000 since 2026-07-23; it read 400
 here until 2026-07-25). The app interpolates the constant, the site does not:
