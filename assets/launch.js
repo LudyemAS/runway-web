@@ -30,7 +30,14 @@
   // lands on "not available in your country or region", so each page flips on the date
   // its own readers can install. Move a date HERE, not in the pages.
   var NORWAY_LAUNCH = '2026-08-25T00:00:00+02:00';
-  var WORLDWIDE_LAUNCH = '2026-09-15T00:00:00Z';
+  // Moved from 2026-09-15 to 2026-08-30, the day the storefronts actually opened. The date
+  // existed to buy about three weeks of Norway-only bake time, and the bake was empty: five
+  // days in there were 8 downloads and 0 ratings, so waiting bought nothing it was meant to
+  // buy. Territories went from 1 to 175 that morning, so this now matches reality rather than
+  // the plan. Do NOT move it back without closing the storefronts first: an English page
+  // showing a waitlist while the store sells is merely understated, but the reverse hands a
+  // reader an App Store link their storefront cannot serve.
+  var WORLDWIDE_LAUNCH = '2026-08-30T00:00:00Z';
 
   // The Bokmal mirror under /no/ is read by people in Norway, so it flips on the Norway
   // date. English pages are read worldwide and wait for the worldwide date. The English
@@ -69,9 +76,14 @@
   // On WORLDWIDE_LAUNCH that inverts: /no/ would then force an American reader onto the
   // Norwegian store instead of their own. That unpin used to be a hand-edit noted in
   // MAINTENANCE.md, but the LAUNCHED flip above was a hand-edit too and it was missed by
-  // two days, so this one is derived instead. Once the worldwide date has passed and the
-  // master gate is open, drop the /no/ prefix at render time. The markup keeps the /no/
-  // form as the no-JS fallback, which is the safer of the two to be stuck on.
+  // two days, so this one is derived instead.
+  //
+  // **Since 2026-08-30 this loop is a NO-OP, deliberately kept.** The storefronts opened
+  // that morning (1 territory -> 175), so the safer fallback inverted with them: all 146
+  // markup hrefs were rewritten to the neutral form, because a no-JS reader stuck on /no/
+  // would now be pushed to a Norwegian store they cannot buy from. The loop stays because
+  // it costs nothing, it is the safety net if any /no/ href is ever reintroduced by hand,
+  // and deleting it would take the reasoning above with it.
   var worldwide = override === '1' ||
                   (override !== '0' && LAUNCHED && Date.now() >= Date.parse(WORLDWIDE_LAUNCH));
   if (worldwide) {

@@ -28,7 +28,10 @@ Pages ship in the "before" state, so with JavaScript off nothing looks broken.
 Two dates, because availability rolls out in two steps:
 
 - `NORWAY_LAUNCH` **2026-08-25**, the Norway storefront only.
-- `WORLDWIDE_LAUNCH` **2026-09-15**, every other storefront.
+- `WORLDWIDE_LAUNCH` **2026-08-30**, every other storefront. Moved earlier from 2026-09-15: the
+  date existed to buy roughly three weeks of Norway-only bake time, and the bake was empty (five
+  days in: 8 downloads, 0 ratings), so waiting bought nothing it was meant to buy. Territories
+  went 1 -> 175 that morning and this date now follows the store rather than the plan.
 
 Which one a page uses is decided by **path**: anything under `/no/` is read by people in Norway
 and flips on the Norway date; English pages are read worldwide and wait for the worldwide date,
@@ -63,7 +66,12 @@ rather than by trusting the calendar: `apps.apple.com/no/app/id6784426559` answe
 
 ### The App Store links are pinned to Norway, and unpin themselves
 
-Every App Store href in the markup is `https://apps.apple.com/**no**/app/id6784426559`, not the
+> **Superseded 2026-08-30, kept because the reasoning still explains the code.** The storefronts
+> are open in all 175 territories, so the pin inverted: all 146 markup hrefs are now the neutral
+> `https://apps.apple.com/app/id6784426559`, and the unpin loop in `launch.js` is a deliberate no-op
+> kept as a safety net. What follows describes the state up to that date.
+
+Every App Store href in the markup was `https://apps.apple.com/**no**/app/id6784426559`, not the
 storefront-neutral `https://apps.apple.com/app/id6784426559`.
 
 That is deliberate. While the app is Norway-only the neutral link is **broken**: Apple geolocates
