@@ -39,24 +39,35 @@ so the App Store link never lands a reader on "not available in your country or 
 English landing page (`index.html`) is the deliberate exception, and sets `window.RUNWAY_LAUNCH`
 itself; an explicit page override always wins.
 
-> **The `/no/` tree has retired from this mechanism (2026-08-27).** Norway launched, so those 26
-> pages have no second state left to switch to. The 75 `js-prelaunch` elements are deleted, their
-> `js-live` twins no longer carry the marker class, and the pages ship `<html class="is-live">`.
-> They now render the launched state with JavaScript off, which is the point: while they shipped
-> `is-prelaunch` as the no-JS default, a Norwegian reader without JS was being offered TestFlight
-> for an app that was already on the App Store.
+> **BOTH trees have now retired from this mechanism. It is dead, and the classes are gone.**
 >
-> **English pages still carry both branches and must keep them** until their storefronts actually
-> serve. Verified 2026-08-27: `us`, `gb`, `se`, `de` and `dk` all answer 404.
+> - **`/no/`, 2026-08-27.** Norway launched, so those 26 pages had no second state left. 75
+>   `js-prelaunch` elements deleted, `js-live` markers stripped, pages ship `<html class="is-live">`.
+> - **English, 2026-08-30.** The storefronts opened in all 175 territories that morning, so the
+>   same treatment applied to all 47 pages: 136 `js-prelaunch` elements deleted, 136 `js-live`
+>   markers stripped, `is-live` shipped in the markup. This also removed the 41 sentences reading
+>   "lands worldwide on 15 September 2026", which had become both stale and Norway-first.
+>
+> The point of shipping the state in the markup rather than deriving it is the no-JS reader: while
+> the English pages shipped `is-prelaunch` as their default, a reader with JavaScript off was
+> offered a TestFlight beta for an app already selling in their own storefront.
+>
+> **The transformation was not hand-written.** It was scripted, then replayed against the `/no/`
+> commit (`60f8eb2`) and diffed until it reproduced that commit byte for byte, and only then run on
+> the English tree. That replay is what caught the one dangerous bug in it: a stray whitespace
+> tidy-up (`\s+>` -> `>`) that also rewrote `w > 0` to `w> 0` inside the calculators' inline
+> JavaScript. **If this kind of sweep is ever needed again, validate it against a known-good commit
+> before running it on anything live.**
 
-**A new page needs** `<html class="is-prelaunch">` and the `launch.js` tag if it is an English page,
-or `<html class="is-live">` and no branch markup if it lives under `/no/`. Do not hardcode a launch
-date in a page.
+**A new page needs** `<html class="is-live">` and no branch markup, in either tree. Do not hardcode
+a launch date in a page, and do not reintroduce `js-prelaunch` / `js-live`.
 
-**On 2026-09-15, do to the English tree what was done to `/no/`:** delete the `js-prelaunch`
-elements, strip the `js-live` markers, and ship `is-live`. At that point `launch.js` is down to the
-theme toggle and the language switcher, and the whole two-state mechanism plus the
-`html.is-prelaunch .js-live` rules in `ludyem.css` can go.
+**What is left to remove, when someone wants the tidy-up:** `launch.js` is now inert for both
+toggles (it recomputes `is-live` / `is-global`, which the markup already states) and its only live
+behaviour is the storefront unpin safety net described below. The `html.is-prelaunch .js-live` and
+`html.is-preglobal .js-global` rules in `ludyem.css` now match nothing. Both were left in place on
+2026-08-30 rather than swept out of 73 pages in the same pass as a copy rewrite; neither costs a
+reader anything.
 
 **`LAUNCHED` is a third gate, and it is the one that is true today.** A date cannot know whether
 App Review approved the build, so `LAUNCHED` in `assets/launch.js` is flipped by hand once the
@@ -104,12 +115,17 @@ form, `'0'` forces the pinned one.
 
 ### Home-country availability, driven by a HAND-SET FLAG
 
+> **Also retired, 2026-08-30.** The 13 `js-preglobal` / `js-global` twins lived in
+> `countries/index.html` only. They were collapsed to the global side the same way the launch pair
+> was: pre-global elements deleted, `js-global` markers stripped, the global wording now simply the
+> wording. `GLOBAL_HOME` in `assets/launch.js` stays `true` and is now inert.
+
 | Class | Shows |
 |---|---|
 | `js-preglobal` | while Norway is the only country you can plan FROM |
 | `js-global` | once other home countries are selectable |
 
-`GLOBAL_HOME` in `assets/launch.js`, **`true` since 2026-08-29**.
+`GLOBAL_HOME` in `assets/launch.js`, **`true` since 2026-08-29**, inert since 2026-08-30.
 
 This one was **not** on a calendar on purpose: turning the home packs on took a build that had to
 clear App Review, so a date would have advertised a home country nobody could pick yet. Runway
