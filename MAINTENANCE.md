@@ -177,6 +177,75 @@ localStorage.removeItem('runwayGlobal')
 
 ---
 
+## 1b. Positioning: what the English tree claims (2026-08-30)
+
+The flags went global on 2026-08-29 and 08-30. The **sentences did not**, and that gap is the
+thing to watch, because nothing here is enforced by tooling.
+
+**The English tree leads with the reader's own country, not with Norway.** The frame is: most
+retirement calculators assume American rules, and Runway is built the other way around, on the
+rules that move your date where you live. Norway appears as one of ten home countries and as the
+worked example of what "modelled natively" means. It is not the audience.
+
+- `index.html`: hero badge "Ten home countries", the `#borders` section "Built for how money
+  actually works", and no "Built for Norway" anywhere.
+- Nav, all 47 pages: the item at `#borders` is **"Why Runway"**. It used to read "Norway".
+- `countries/*`: titles, H1s, meta, the exit-tax table row and FAQ are written from **whichever**
+  country the reader is leaving. The nine native-capable pages say "Home country and destination".
+- `press.html`: tagline, one-line and long copy re-cut for a global audience. The Norwegian press
+  hook that §1 deliberately preserved on 2026-08-29 is **spent**; that note is now history.
+- Blog: the seven Norway posts KEEP their Norwegian depth (the slug promises it and it is what they
+  rank on) and each carries a multi-country section beside it. Index cards tagged "Country rules".
+
+**When you write a new home-country claim, write it state-free.** A sentence true for every reader
+cannot rot. The four surfaces that were missed on 2026-08-29 were all missed the same way: they
+stated a fact about Norway that a CSS branch could not correct.
+
+**Facts that live in the app, not here, and have now bitten three times:**
+
+| Fact | Source of truth | Was wrong here |
+|---|---|---|
+| Monte Carlo runs (500) | `RunwayFeatures.snapshotMonteCarloRuns` | said 1,000 for a month |
+| Shipping languages (en, nb, it, de, fr) | `Runway/Localization/table-languages.json` `$ALL` | `llms.txt` and index JSON-LD said two |
+| Native home countries (10) | `Runway/Features/Shared/CountryCatalog.swift` | UK/France/Sweden pages said destination-only |
+
+Same shape every time: a number or a list the app owns, copied into a repo that cannot see it
+change. **Re-read the source, do not trust the copy here**, including this table.
+
+### Tax figures in blog posts
+
+`§3` already says pack figures are probed, never hand-typed. That applies to **prose too**. The
+multi-country sections added on 2026-08-30 are read off the engine packs and their manifests
+(`*Pack.swift` `exitTax`, `*Pack+Manifest.swift` `wealth.*` / `caps.*` / `shielding.*`) and off
+`CountryContent.statePensionClaimRange`. It matters: the manifests carry the exclusions and
+elections (Canada's RRSP/RRIF/TFSA carve-out, Australia's s 104-165 election, Germany's
+concentrated-holding trigger) that a summary written from memory flattens into something false.
+
+### Two things the automated checks cannot see
+
+1. **`.cmp .no` is `var(--faint)`, about 2.6:1 on the dark ground.** Fine as a one-word "No" marker
+   beside a word that carries the meaning, NOT fine on a cell a reader has to read. 18 such cells
+   were introduced and removed again on 2026-08-30. Every check in this repo was green the whole
+   time; only asking the browser for the computed colour found it. **`.yes` is 11.4:1 and fine.**
+   The 39 pre-existing `.no` uses are markers and were left alone.
+2. **12 pages have `FAQPage` JSON-LD whose questions do not match the visible `<summary>`** (5 EN
+   calculators, 5 NO calculators, 2 NO posts). The split is systematic and one-directional,
+   keyword-rich in JSON and terser on the page, so it reads as deliberate and was left alone. Be
+   aware Google can drop a rich result over it. Sweep for it with:
+
+```bash
+python3 - <<'EOF'
+import json, re, glob
+for p in sorted(glob.glob('**/*.html', recursive=True)):
+    s = open(p, encoding='utf-8').read()
+    qs = next((["".join(x['name']) for x in json.loads(m.group(1))['mainEntity']]
+               for m in re.finditer(r'<script[^>]*ld\+json[^>]*>(.*?)</script>', s, re.S)
+               if '"FAQPage"' in m.group(1)), None)
+    if qs and qs != re.findall(r'<summary>(.*?)<span', s):
+        print("MISMATCH", p)
+EOF
+```
+
 ## 2. Live counts (hand-maintained, they drift silently)
 
 ### Destination count, **reader-relative since 2026-08-29**
