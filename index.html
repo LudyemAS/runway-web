@@ -154,9 +154,9 @@
       "operatingSystem": "iOS 26.0 or later",
       "url": "https://runwayfire.com/",
       "downloadUrl": "https://apps.apple.com/app/id6784426559",
-      "inLanguage": ["en", "nb-NO"],
-      "description": "Runway is a retirement and financial-independence planner for iPhone and iPad, built around Norwegian tax rules: wealth tax, the ASK account, NAV and IPS pensions, and the exit tax. It projects your freedom age, ranks the levers that move it sooner, prices retiring abroad country by country, and computes everything on-device with no account and no bank logins.",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "NOK" },
+      "inLanguage": ["en", "nb-NO", "it", "de", "fr"],
+      "description": "Runway is a retirement and financial-independence planner for iPhone and iPad, built on your own country's real tax rules. Ten countries can be planned from, each on its own accounts, tax bands and pension rules. It projects your freedom age, ranks the levers that move it sooner, prices retiring abroad country by country, and computes everything on-device with no account and no bank logins.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "publisher": { "@id": "https://runwayfire.com/#organization" }
     }
     ]
@@ -179,7 +179,7 @@
       <div class="nav-links" id="nav-links">
         <a href="/#how">How it works</a>
         <a href="/#features">Features</a>
-        <a href="/#borders">Norway</a>
+        <a href="/#borders">Why Runway</a>
         <a href="/calculators/">Calculators</a>
         <a href="/blog/">Blog</a>
         <a href="/countries/">Countries</a>
@@ -193,12 +193,12 @@
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <div class="hero-badge">Built for Norway · On the App Store · On-device, no bank logins</div>
+      <div class="hero-badge">Ten home countries · On the App Store · On-device, no bank logins</div>
       <h1>Know the day<br><span class="grad">you're free.</span></h1>
       <p class="hero-sub">
         Runway turns your money into one honest number: the age you could stop working.
-        Built on the Norwegian rules that actually move that date, with the levers to pull
-        it sooner, and a plan for retiring abroad.
+        Built on the real tax, pension and account rules where you actually live, with the
+        levers to pull it sooner, and a plan for retiring abroad.
       </p>
       <div class="hero-actions">
         <a href="https://apps.apple.com/app/id6784426559" class="btn-primary" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg> Download on the App Store</a>
@@ -244,7 +244,7 @@
           <div class="try-field"><label for="try-sp">Spending per year</label><div class="try-in"><input id="try-sp" type="text" inputmode="numeric" value="360,000" /><span class="unit">kr</span></div></div>
         </div>
         <div class="try-result" aria-live="polite"><span class="try-kicker">Roughly free at</span><span class="try-age grad" id="try-out">56</span></div>
-        <p class="try-note" id="try-note">Napkin only: 25 times spending, 4 percent real growth. The app's engine adds your pensions, the ASK order and Norwegian taxes, and usually lands somewhere else.</p>
+        <p class="try-note" id="try-note">Napkin only: 25 times spending, 4 percent real growth. The app's engine adds your pensions, your accounts' withdrawal order and your country's taxes, and usually lands somewhere else.</p>
         <a href="https://apps.apple.com/app/id6784426559" class="btn-primary" target="_blank" rel="noopener">Get your real number free</a>
       </div>
     </div>
@@ -253,7 +253,7 @@
         var ids = ['try-age-in', 'try-bal', 'try-mo', 'try-sp'];
         var out = document.getElementById('try-out');
         var note = document.getElementById('try-note');
-        var BASE_NOTE = "Napkin only: 25 times spending, 4 percent real growth. The app's engine adds your pensions, the ASK order and Norwegian taxes, and usually lands somewhere else.";
+        var BASE_NOTE = "Napkin only: 25 times spending, 4 percent real growth. The app's engine adds your pensions, your accounts' withdrawal order and your country's taxes, and usually lands somewhere else.";
         function val(id) {
           var v = (document.getElementById(id).value || '').replace(/[^0-9]/g, '');
           return v ? parseInt(v, 10) : 0;
@@ -304,7 +304,7 @@
         </figure>
         <figure class="shot">
           <div class="phone"><img src="assets/shots/norway.png?v=4" width="800" height="1738" loading="lazy" decoding="async" alt="Runway Norwegian tax screen explaining wealth tax, shielding, and pension rules" /></div>
-          <figcaption class="shot-cap"><strong>Built for Norway</strong>Wealth tax, shielding and pensions, built in.</figcaption>
+          <figcaption class="shot-cap"><strong>Real rules, not averages</strong>Norway's wealth tax, shielding and pensions, built in.</figcaption>
         </figure>
         <figure class="shot">
           <div class="phone"><img src="assets/shots/pip.png?v=4" width="800" height="1738" loading="lazy" decoding="async" alt="Ask Pip, Runway's on-device plan assistant, explaining the plan and comparing moves" /></div>
@@ -343,24 +343,28 @@
     </div>
   </section>
 
-  <!-- Built for Norway -->
+  <!-- Built for how money actually works -->
   <section id="borders">
     <div class="container">
       <div class="duo">
         <div>
-          <div class="section-label">Built for Norway</div>
-          <h2 class="section-title">Built for how money works in Norway</h2>
+          <div class="section-label">Built for how money actually works</div>
+          <h2 class="section-title">Most retirement calculators assume American rules</h2>
           <p class="section-sub" style="margin-bottom:24px;">
-            Most retirement calculators assume American rules: 401(k)s, Roth accounts, Social
-            Security. A Norwegian gets a motivating number, not a real plan. Runway is built the
-            other way around, on the rules that actually move your date here.
+            401(k)s, Roth accounts, Social Security. Live anywhere else and that gives you a
+            motivating number, not a real plan. Runway is built the other way around, on the
+            rules that actually move your date where you live.
           </p>
           <p class="section-sub">
-            It models formuesskatt (wealth tax), the ASK account's capital-first withdrawals, the
-            skjermingsfradrag, NAV and IPS pensions, and the utflyttingsskatt you would owe if you
-            ever left Norway. And if leaving is the plan, Runway prices that too: pick a destination
-            country and see the whole move, from local drawdown taxes to the exit tax
-            on the way out. The <a href="/countries/" style="color:var(--grad-a);">full list of modelled countries</a> is here. The app is fully translated into Norwegian, and more home countries are coming next.
+            Ten countries can be planned from, each on its own accounts, tax bands and pension
+            rules: Norway, Sweden, the United Kingdom, Germany, France, Italy, the Netherlands,
+            the United States, Canada and Australia. That means the real machinery, wealth taxes
+            and shielding deductions, ISAs and ASKs and 401(k)s, state pensions and the earliest
+            age each will pay out, rather than one flat rate stretched over everything. And if
+            leaving is the plan, Runway prices that too: pick a destination and see the whole
+            move, from local drawdown taxes to any exit tax your home country charges on the way
+            out. Eighteen countries are modelled in total, and all of them work as destinations.
+            The <a href="/countries/" style="color:var(--grad-a);">full list of modelled countries</a> is here. The app is available in English, Norwegian, Italian, German and French.
           </p>
         </div>
         <img src="assets/mascot-globe.svg" width="768" height="768" loading="lazy" decoding="async" alt="Pip holding a globe" />
@@ -379,12 +383,12 @@
       <div class="features-grid">
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotFreedom.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Your freedom age</h3><p>The one number that matters: the age your money could carry you. It's the hook, and it's free forever, no account required.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotTargetHit.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Freedom number</h3><p>The pot you actually need, derived from your real spending and a safe 4% withdrawal, net of pensions, rental, and side income.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotIdea.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>The levers</h3><p>An opportunity engine that finds the doors you didn't open: "invest 300 kr more a month, retire two years sooner." Every lever shows its effect.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotIdea.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>The levers</h3><p>An opportunity engine that finds the doors you didn't open: "lift your savings rate two points, retire two years sooner." Every lever shows its effect.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotSafeSpend.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Plan health</h3><p>A seeded Monte Carlo runs your plan through 500 simulated market futures and scores how often your money lasts the distance.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotGrowth.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Money over time</h3><p>Watch your pot grow, peak, and draw down year by year, with your freedom goal line anchored to today so progress reads honestly.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotMoneyMap.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Adaptive onboarding</h3><p>No side income? Runway never mentions it. No property? It skips the mortgage questions. It asks only what fits your life, nothing more.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotAssumptions.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Scenario lab</h3><p>Try the what-ifs side by side: a market crash, a later start, a different spend, a change in how you invest. Compare paths before you commit.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotWealthTax.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Built for Norway</h3><p>The only FIRE planner that knows formuesskatt, the ASK account, NAV and IPS pensions, and the exit tax you would owe if you ever leave. Your number, by Norwegian rules.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotWealthTax.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Built on real tax rules</h3><p>Ten countries modelled natively, down to wealth taxes, shielding deductions, tax-wrapped accounts and state pensions. Your number, by the rules where you actually live.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotRelocate.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Retire abroad</h3><p>Dreaming of Spain or Thailand? Pick a destination and Runway prices the move: local taxes on your drawdown, the exit tax on the way out, spending in local currency. 17 countries modelled.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotPip.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Ask Pip</h3><p>Runway's plan assistant. Ask why your number moved or what would help most, get answers grounded in your plan, and let Pip apply the change. On-device with Apple Intelligence.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotSpending.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Life events, real spending</h3><p>Add an inheritance, a windfall, or a big one-off cost. Let retirement spending ease with age, and set guardrails that flex it when markets misbehave.</p></div>
@@ -428,7 +432,7 @@
       <div class="features-grid">
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotFreedom.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Free, forever</h3><p>Your freedom age and number, the base projection, the full ranked list of levers, and a Monte Carlo read on your plan. No account, no expiry.</p></div>
         <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotPotGold.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Pro: the full toolkit</h3><p>The complete year-by-year projection and cost ledger, stress tests, the scenario lab, the live countdown ticker, the Coast and Barista solvers, CSV export, and the deep plan-health detail behind the score.</p></div>
-        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotTaxes.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Pro: Norway, kept current</h3><p>The deep Norwegian tax detail behind your number, updated as the figures change each year, so your plan stays honest over time.</p></div>
+        <div class="feature-card"><div class="feature-icon is-spot"><img src="/assets/spot/SpotTaxes.svg" alt="" width="56" height="56" loading="lazy" decoding="async" /></div><h3>Pro: kept current</h3><p>The deep tax detail behind your number, for every modelled country, updated as the figures change each year, so your plan stays honest over time.</p></div>
       </div>
     </div>
   </section>
